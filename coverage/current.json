@@ -5,12 +5,12 @@
   "scope": "Frozen TCG Live Standard snapshot. Declared finite requirements, not exhaustive state-space equivalence.",
   "engine": {
     "version": 1,
-    "sourceCommit": "682e9fc8308aba562a5b82962b2e08010c59b49c",
-    "librarySha256": "782cbfbe47a7c2148c53b3afb1cc2948b6823b1309a4bbe9d4ad48f93653dc88",
-    "registrySha256": "beb23bbf94e75f46e50fd9474ea138b031c06678334edabb001343ecf9237816"
+    "sourceCommit": "31cfc8165658f60c1150c8465cd54336881e42e7",
+    "librarySha256": "eb0ba3176dfcc572da029d5765529f1d032a0d764a3e62aa5e937a20243673a0",
+    "registrySha256": "53f529953e369193c40151a3df7606d9671381f4f24491c49ce19d9200e0645d"
   },
-  "sourceReportSha256": "57607c17b84fa8f0c833f43bcf526cfe30a866fb57d1b242d0cedccbbedd5c4d",
-  "aggregateReceiptSha256": "1fc9ef81d781a1575ede7d2c7762bb084eb0cd467eb2c39202c39379f7065b44",
+  "sourceReportSha256": "3d5ff8b5d640079345c4f252f08efb1808044b9a6fd69997c07bb7bcf4d1661e",
+  "aggregateReceiptSha256": "7ce8c110db487ae58d7753b345325fa9632805a448dc475ad4b76d2ad7992908",
   "denominator": {
     "eligiblePrintings": 6287,
     "rawSourcePrintings": 6286,
@@ -23,21 +23,21 @@
     "caseIdsSha256": "afeaf51dd7d9ec989bc3eb5342a8a8f7d48c91b62de835fe9ec07150ae9c6368"
   },
   "caseStatusCounts": {
-    "oracle_matched": 7421,
+    "oracle_matched": 8010,
     "source_missing": 1,
-    "unobserved": 14498
+    "unobserved": 13909
   },
   "programStatusCounts": {
     "declared_cases_matched": 312,
-    "partially_observed": 464,
-    "unobserved": 1305
+    "partially_observed": 499,
+    "unobserved": 1270
   },
   "rowStatusCounts": {
-    "absent": 120,
+    "absent": 112,
     "declared_cases_matched": 1032,
     "identity_candidate_untested": 215,
-    "identity_unresolved": 1187,
-    "partially_observed": 3732,
+    "identity_unresolved": 1128,
+    "partially_observed": 3799,
     "source_missing": 1
   },
   "fullStandardReady": false,
@@ -47,6 +47,7 @@
     "Rulings and full interactions remain deferred.",
     "Actor prompt, reader and hidden-information qualification is incomplete.",
     "Exact engine, source, deck admission and licensed external runtime are required.",
-    "Private parity observations are not distributed or reproduced by this summary."
+    "Private parity observations are not distributed or reproduced by this summary.",
+    "Matched two-view privacy scenarios do not establish actor counterfactual invariance."
   ]
 }
