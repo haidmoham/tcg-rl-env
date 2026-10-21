@@ -112,6 +112,10 @@ traces outside the repository. Match a recipe's exact source and artifact pins
 before execution. Keep a frozen external evaluation reference and retain faults
 and censoring. Teacher loss and self-play win rate do not establish improvement.
 
+The [audited historical campaign](experiments/evidence/mew-sustained-final-2026-10-21.json)
+completed nine PPO updates. Critic calibration worsened, and the pipeline and
+playing-strength decisions remain inconclusive.
+
 The default `check_readiness.py` command needs no deck data. Its optional
 `--evidence` path also expects the omitted historical deck manifest. Restore
 that exact artifact only after establishing permission to use it. The public

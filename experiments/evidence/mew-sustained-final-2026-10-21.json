@@ -1,0 +1,1386 @@
+{
+  "date": "2026-10-21",
+  "decisions": {
+    "cost_and_affordability": {
+      "campaign_wall_cap_seconds": 7200,
+      "completed_within_declared_campaign_wall_cap": true,
+      "rationale": "The original campaign finished within its declared wall cap on the shared CPU host. Interrupted evaluation costs and discarded training work remain charged. Separate post-campaign replay costs are excluded from that cap. This is no matched performance or general affordability comparison.",
+      "verdict": "descriptive_only"
+    },
+    "pipeline": {
+      "rationale": "The bounded historical pipeline executed and its saved targets and checkpoints passed the scoped audits. Policy transfer showed a small descriptive probe change, critic calibration worsened, and both strength contrasts remained inconclusive. This run does not justify adopting the full recipe as an improvement or reject its execution machinery.",
+      "scope": "Adoption of the complete staged recipe for further learning.",
+      "verdict": "inconclusive"
+    },
+    "strength": {
+      "basis": "Both prespecified simultaneous paired intervals include zero.",
+      "verdict": "inconclusive"
+    }
+  },
+  "evaluation_accounting": {
+    "completed_evaluation_learner_choices": 212824,
+    "completed_evaluations": [
+      {
+        "charged_learner_choices": 53506,
+        "checkpoint_sha256": "275098188622d9a2698decd470da37b19e96eff5c4a6b8d4bbee7799adc707c9",
+        "draws": 0,
+        "games": 576,
+        "labels": [
+          "initial"
+        ],
+        "losses": 286,
+        "number": 0,
+        "result_sha256": "2263887bc2a07f148a4dede11381d174c3d22da616ebf01895225d52405f7595",
+        "statuses": {
+          "terminal": 576
+        },
+        "wall_seconds": 558.476188849,
+        "wins": 290
+      },
+      {
+        "charged_learner_choices": 53338,
+        "checkpoint_sha256": "be0ef50f1204246c77c60e949a1286fdd10eb96ef10365a690d638a0682fcc31",
+        "draws": 0,
+        "games": 576,
+        "labels": [
+          "pre_rl"
+        ],
+        "losses": 291,
+        "number": 1,
+        "result_sha256": "691e1a64c9f6301814b0756fa6b03f9130b6c622b4331ef246747949f8620850",
+        "statuses": {
+          "terminal": 576
+        },
+        "wall_seconds": 520.4720626120001,
+        "wins": 285
+      },
+      {
+        "charged_learner_choices": 26562,
+        "checkpoint_sha256": "509532edfe8b44f33401c4daa6c19bb638d476f18f616e795f3de4d09c24ed39",
+        "draws": 0,
+        "games": 288,
+        "labels": [
+          "report_1800"
+        ],
+        "losses": 140,
+        "number": 2,
+        "result_sha256": "270d510fc024d64471f3d69dbc470332908fe44abaec7ed12a1c70bb1cb883e8",
+        "statuses": {
+          "terminal": 288
+        },
+        "wall_seconds": 272.3782266349999,
+        "wins": 148
+      },
+      {
+        "charged_learner_choices": 26845,
+        "checkpoint_sha256": "efd0b145a32510b9bc528c66d4b13fecd9f4a384124158ea98021afc0edf10d5",
+        "draws": 0,
+        "games": 288,
+        "labels": [
+          "report_3600"
+        ],
+        "losses": 155,
+        "number": 3,
+        "result_sha256": "706cbafcdb994ebe43c4e019857d0e5c887a296e07dc267a4d3f16da367b7aa5",
+        "statuses": {
+          "terminal": 288
+        },
+        "wall_seconds": 306.92472920399996,
+        "wins": 133
+      },
+      {
+        "charged_learner_choices": 26496,
+        "checkpoint_sha256": "42590aa6c986aa4ba459618c48974c8fa1e749accb8087dc4305c740ba7c0c29",
+        "draws": 0,
+        "games": 288,
+        "labels": [
+          "report_5400"
+        ],
+        "losses": 130,
+        "number": 4,
+        "result_sha256": "bf82395c837b2ba3aee3deae4c651cd6b7d291eac40fc4be0e8c8c2c46262c5c",
+        "statuses": {
+          "terminal": 288
+        },
+        "wall_seconds": 377.9915319819993,
+        "wins": 158
+      },
+      {
+        "charged_learner_choices": 26077,
+        "checkpoint_sha256": "42d94de72a034bf36e317fddae2f2fc8e04226f580e4ec094062a7abf18a8b6c",
+        "draws": 0,
+        "games": 288,
+        "labels": [
+          "final"
+        ],
+        "losses": 125,
+        "number": 5,
+        "result_sha256": "ef539bae53c647cfd2722079f3f05af843a137f1927876c2451fb69d12d1dcdf",
+        "statuses": {
+          "terminal": 288
+        },
+        "wall_seconds": 275.58908561799944,
+        "wins": 163
+      }
+    ],
+    "completed_games": 2304,
+    "interrupted_original_evaluations": [
+      {
+        "charged_learner_choice_bounds": [
+          43667,
+          100000
+        ],
+        "complete_result_available": false,
+        "completed_game_receipts": 472,
+        "frozen_player_unchanged": null,
+        "started_without_completed_receipt": 1
+      }
+    ],
+    "new_reference_games_after_amendment": 0,
+    "preservation": "Completed 72-game pilot evidence is outside this campaign. Completed 576-game reference evidence and interrupted original costs remain unchanged. Fixed balanced 288-game subsets retain original assignment identities and seeds.",
+    "total_original_campaign_evaluation_choice_bounds": [
+      256491,
+      312824
+    ]
+  },
+  "final_evaluation": {
+    "charged_learner_choices": 26077,
+    "checkpoint_id": "checkpoint-000020",
+    "conclusion": "Both prespecified paired contrasts are inconclusive. The point estimates do not establish playing-strength improvement.",
+    "contrasts": {
+      "initial": {
+        "paired_clusters": 144,
+        "per_comparison_alpha": 0.0035714285714285718,
+        "score_difference": 0.059027777777777776,
+        "simultaneous_interval": [
+          -0.2374313439997916,
+          0.3554868995553472
+        ],
+        "verdict": "inconclusive"
+      },
+      "pre_rl": {
+        "paired_clusters": 144,
+        "per_comparison_alpha": 0.0035714285714285718,
+        "score_difference": 0.06944444444444445,
+        "simultaneous_interval": [
+          -0.22701467733312494,
+          0.3659035662220138
+        ],
+        "verdict": "inconclusive"
+      }
+    },
+    "draws": 0,
+    "games": 288,
+    "losses": 125,
+    "multiplicity": {
+      "contrasts_per_checkpoint": 2,
+      "family_alpha": 0.05,
+      "maximum_distinct_checkpoints": 7,
+      "paired_clusters": 144
+    },
+    "statuses": {
+      "terminal": 288
+    },
+    "teacher_loads": 0,
+    "teacher_queries": 0,
+    "unknown_accounting": {},
+    "wall_seconds": 275.58908561799944,
+    "wins": 163
+  },
+  "identities": {
+    "evaluation_amendment_file_sha256": "ceee1e79098b089ed08ec20a53e02a1fb97f33bbf4c956d9da0c2256ce24b115",
+    "final_checkpoint_sha256": "42d94de72a034bf36e317fddae2f2fc8e04226f580e4ec094062a7abf18a8b6c",
+    "final_evaluation_result_sha256": "ef539bae53c647cfd2722079f3f05af843a137f1927876c2451fb69d12d1dcdf",
+    "initial_checkpoint_sha256": "275098188622d9a2698decd470da37b19e96eff5c4a6b8d4bbee7799adc707c9",
+    "pre_rl_checkpoint_sha256": "be0ef50f1204246c77c60e949a1286fdd10eb96ef10365a690d638a0682fcc31",
+    "protocol_file_sha256": "e0cc3b8d05a038f2b10d2a81013933d8a7f2be833d3a7be8bc05b4eaeff8f46d",
+    "source_artifact_manifest_sha256": "a6d333fa85f77501eb16af95c2c6fee9425fd73ee9149cb9ce2fbe2963c3572f",
+    "terminal_campaign_receipt_sha256": "dfe0a5e56c36a6cfa6fb692fdcfdee8a3a4136c008eb38cdbaaf1f8e202cee05",
+    "verified_frozen_artifacts": 398
+  },
+  "learning_diagnostics": {
+    "source_receipts": {
+      "audit-result.json": "933a56a6e170d78897bd218ade27d75fe76f98d17cfa5a20cc40a180d2c2e5ae",
+      "stage1-probe-after.json": "b00ef0a9cb120e64ec8895ca91ca209d9902efe3efe86934fc6837ab30e8da0b",
+      "stage1-probe-before.json": "ad57a058c925da0b66fa6f4474c7d2e8b1a375c3663cbcf4ba29d243dbd30b56",
+      "stage1-result.json": "2e580b2b7ae1ed7fcfdf7d7fb514cc80828194465e5a4d803bd69558994b7ed0",
+      "stage1-updates.jsonl": "e4ce19b2b6de01b66a05835a5291d152ff3f78bc79cba51d908aa24689eac75b",
+      "stage3-result.json": "0b630fea53fe20435e06a24b6a2f643d650e628bb7216c50839a918c6b1ddd9d",
+      "stage4-updates.jsonl": "6bbfac65a31aa546107fd2b357dd7b4484436148590034eb1764216b47089a25"
+    },
+    "stage1_policy_transfer": {
+      "committed_training_labels_overlapping_probe_digests": 0,
+      "critic_head_unchanged_reported": true,
+      "disjointness_evidence": "The independent tensor audit checked all three fixed 512-label batches against the frozen probe digest set. This establishes exact-frame exclusion, not independence of all related game situations.",
+      "exact_probe_overlap_queries_excluded": 7,
+      "heldout_after": {
+        "count": 32,
+        "mean_cross_entropy": 1.406254194676876,
+        "mean_forward_kl": 0.8014773763716221,
+        "rows": [
+          {
+            "cross_entropy": 0.6887050867080688,
+            "forward_kl": 0.6650161147117615,
+            "frame_digest": "86644e10e408cec1aa0553f1ffd4f70e1fa4d2aec403505d5a73658cdb29c589",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.3606164455413818,
+            "forward_kl": 0.7914798259735107,
+            "frame_digest": "e07ba60e8922daeeebf25abe05e2e7ad582d90cb284b8e790f6d6f18df50f243",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7934939861297607,
+            "forward_kl": 1.2211216688156128,
+            "frame_digest": "0aa961fe900f8da6fc2f82e2540cfffd88101880ace73c3735e054c5bbd5004b",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.6113605499267578,
+            "forward_kl": 1.0478426218032837,
+            "frame_digest": "b02be24b33ce056ad8053548c4f4093bebe1bd2e4db6d2fcc3944d6eaba03051",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 2.822664499282837,
+            "forward_kl": 2.5799202919006348,
+            "frame_digest": "f99ecbbd572c1c94c5c2cf0e8eafad6cb5d93f50e614bc9d0e88e0fb03d91843",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.0713270902633667,
+            "forward_kl": 0.7671936750411987,
+            "frame_digest": "255bf4c64a2973520af31019dbaa4dfd728768875905bc968944710e8e333c48",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.3660892248153687,
+            "forward_kl": 0.9035925269126892,
+            "frame_digest": "c7575258ad7b9e8599d4464b37e91c2541663be320066af717c174df2b7bb392",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 2.469944953918457,
+            "forward_kl": 2.0865960121154785,
+            "frame_digest": "f19e693e1d2a01baeb4775beb41c00d5628d66b492a60ac4299812c49f018337",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.0634082555770874,
+            "forward_kl": 0.16170090436935425,
+            "frame_digest": "ab4db09b0499fc93779f60e5daea7f7532a680241b701ab728d7577bd735e296",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 0.6910398006439209,
+            "forward_kl": 4.6133995056152344e-05,
+            "frame_digest": "17f1624f88b098ab56dadfe3b9616d5fe7afeb35f28a7a89423c6233e71b49e2",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 0.6857672333717346,
+            "forward_kl": 0.005489647388458252,
+            "frame_digest": "10c9fc009fbca409d691e5af716e3fbee7a25ca3cbfc704a233df00122d3f5cc",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 0.6364731788635254,
+            "forward_kl": 0.6260109543800354,
+            "frame_digest": "37e114378881387a2de0604e99410b222e8eb95078b819eb72c8363ca7034d16",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.0610368251800537,
+            "forward_kl": 1.0336854457855225,
+            "frame_digest": "1024f78686ea96ff86a10c293c42fbb52101288976df3fbd1f5686669ee2a5ae",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.3683408498764038,
+            "forward_kl": 1.1051276922225952,
+            "frame_digest": "08412e3ba2a705a00ffff8f1b1a90adca97dd41f8e529d40335850c96592cea9",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.920516014099121,
+            "forward_kl": 1.7204142808914185,
+            "frame_digest": "04a3453bf1a1de75e0c866274fd7b7d8a7c997c99bf8612925b469d626c3ca66",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7622023820877075,
+            "forward_kl": 1.4991607666015625,
+            "frame_digest": "10223d6ec1d886de62be5ed5aea3efc7b43753c393c66d22f74d15dfece2344d",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7656409740447998,
+            "forward_kl": 1.2727388143539429,
+            "frame_digest": "de24605e4b9d20b370a06a71c51beda56a5f096f37086fcbd1a18de4fec1f1cc",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 0.6930740475654602,
+            "forward_kl": 0.25735509395599365,
+            "frame_digest": "1f100c66a640f63a4533744d0946beb5eaa8a59b0d26023c13f5bf697ef5375f",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.5754071474075317,
+            "forward_kl": 0.7524762749671936,
+            "frame_digest": "db97f738f8e6735c978313856be4ab808422ea9523eb356df1a12ef47038e9cf",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.0600941181182861,
+            "forward_kl": 0.9603785276412964,
+            "frame_digest": "d45ffdfad8063ec301e4e084ab948106d8fe1598ab0657a22939721ac641c9e9",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.561267614364624,
+            "forward_kl": 0.8851197957992554,
+            "frame_digest": "ad652e2f387f73eb1c6198206f27e214076f5c4ed2a898f1b7660949eb356ca4",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.558915376663208,
+            "forward_kl": 1.0209431648254395,
+            "frame_digest": "28c6681cecccea5d1868c5ef17301222d1c9a5f89da59ca6caa4582456e9fb90",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.766666054725647,
+            "forward_kl": 0.451504111289978,
+            "frame_digest": "2c5a5bb77ea97114f48c0fa272505371d47d809ae9420b1dbb3536e987b646a4",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 2.2838008403778076,
+            "forward_kl": 1.2387253046035767,
+            "frame_digest": "03548e8b7d2235c0755889ecffebb9e2d7350fb567b46a718ada6add7b8d6c9b",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7655773162841797,
+            "forward_kl": 0.4413447380065918,
+            "frame_digest": "78b332fb4eb31c1c74f4aef041d057d230d185d7fdbd008444b93ff7cd6d2277",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.5700587034225464,
+            "forward_kl": 0.2401806116104126,
+            "frame_digest": "af76a85455de4b9b652208ea4acccd1c09d22e6e4c6e57b8af224bc47c02bb12",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.3295009136199951,
+            "forward_kl": 0.24620401859283447,
+            "frame_digest": "30a1518fcac83da9d3835485a9c082ddc6807de171b4986d985560a8c4786641",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 0.6934851408004761,
+            "forward_kl": 0.5574771165847778,
+            "frame_digest": "17f7583743b1dd8fe879535482d6473973151ced164ef8c0e21e2a5544a6ba85",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.3622456789016724,
+            "forward_kl": 0.26459312438964844,
+            "frame_digest": "ad8add673a3ae971ef1c91563d206ec0f117c99db50fbd748ef2ceb4bc076d93",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.4330995082855225,
+            "forward_kl": 0.48143839836120605,
+            "frame_digest": "109b9a3ca78fd85055bdbef3e2ccf599441148ea7a52852797d09d72d7720173",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.1390109062194824,
+            "forward_kl": 0.16649150848388672,
+            "frame_digest": "d661e565a66effd1565ecd081d7c5d1a62c0a836d2cd220a06143301c8da45a1",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.0693035125732422,
+            "forward_kl": 0.1959068775177002,
+            "frame_digest": "3993907710f700620f2637e9dadf445b93082f26dbc2c437546ad9e878e03d9a",
+            "top1_agreement": 1
+          }
+        ],
+        "top1_agreement": 0.3125
+      },
+      "heldout_before": {
+        "count": 32,
+        "mean_cross_entropy": 1.4208925366401672,
+        "mean_forward_kl": 0.8161157183349133,
+        "rows": [
+          {
+            "cross_entropy": 0.6823307871818542,
+            "forward_kl": 0.6586418151855469,
+            "frame_digest": "86644e10e408cec1aa0553f1ffd4f70e1fa4d2aec403505d5a73658cdb29c589",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.377550721168518,
+            "forward_kl": 0.808414101600647,
+            "frame_digest": "e07ba60e8922daeeebf25abe05e2e7ad582d90cb284b8e790f6d6f18df50f243",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7933168411254883,
+            "forward_kl": 1.2209445238113403,
+            "frame_digest": "0aa961fe900f8da6fc2f82e2540cfffd88101880ace73c3735e054c5bbd5004b",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.6111729145050049,
+            "forward_kl": 1.0476549863815308,
+            "frame_digest": "b02be24b33ce056ad8053548c4f4093bebe1bd2e4db6d2fcc3944d6eaba03051",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 2.8299856185913086,
+            "forward_kl": 2.5872414112091064,
+            "frame_digest": "f99ecbbd572c1c94c5c2cf0e8eafad6cb5d93f50e614bc9d0e88e0fb03d91843",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.088269591331482,
+            "forward_kl": 0.784136176109314,
+            "frame_digest": "255bf4c64a2973520af31019dbaa4dfd728768875905bc968944710e8e333c48",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.3794374465942383,
+            "forward_kl": 0.9169407486915588,
+            "frame_digest": "c7575258ad7b9e8599d4464b37e91c2541663be320066af717c174df2b7bb392",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 2.4805121421813965,
+            "forward_kl": 2.097163200378418,
+            "frame_digest": "f19e693e1d2a01baeb4775beb41c00d5628d66b492a60ac4299812c49f018337",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.084947109222412,
+            "forward_kl": 0.18323975801467896,
+            "frame_digest": "ab4db09b0499fc93779f60e5daea7f7532a680241b701ab728d7577bd735e296",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 0.6920610070228577,
+            "forward_kl": 0.00106734037399292,
+            "frame_digest": "17f1624f88b098ab56dadfe3b9616d5fe7afeb35f28a7a89423c6233e71b49e2",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 0.6904176473617554,
+            "forward_kl": 0.010140061378479004,
+            "frame_digest": "10c9fc009fbca409d691e5af716e3fbee7a25ca3cbfc704a233df00122d3f5cc",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 0.673127293586731,
+            "forward_kl": 0.662665069103241,
+            "frame_digest": "37e114378881387a2de0604e99410b222e8eb95078b819eb72c8363ca7034d16",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.0864455699920654,
+            "forward_kl": 1.0590941905975342,
+            "frame_digest": "1024f78686ea96ff86a10c293c42fbb52101288976df3fbd1f5686669ee2a5ae",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.3830355405807495,
+            "forward_kl": 1.119822382926941,
+            "frame_digest": "08412e3ba2a705a00ffff8f1b1a90adca97dd41f8e529d40335850c96592cea9",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.939518928527832,
+            "forward_kl": 1.7394171953201294,
+            "frame_digest": "04a3453bf1a1de75e0c866274fd7b7d8a7c997c99bf8612925b469d626c3ca66",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7843116521835327,
+            "forward_kl": 1.5212700366973877,
+            "frame_digest": "10223d6ec1d886de62be5ed5aea3efc7b43753c393c66d22f74d15dfece2344d",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7777284383773804,
+            "forward_kl": 1.2848262786865234,
+            "frame_digest": "de24605e4b9d20b370a06a71c51beda56a5f096f37086fcbd1a18de4fec1f1cc",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 0.6930934190750122,
+            "forward_kl": 0.25737446546554565,
+            "frame_digest": "1f100c66a640f63a4533744d0946beb5eaa8a59b0d26023c13f5bf697ef5375f",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.6010221242904663,
+            "forward_kl": 0.7780912518501282,
+            "frame_digest": "db97f738f8e6735c978313856be4ab808422ea9523eb356df1a12ef47038e9cf",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.0739741325378418,
+            "forward_kl": 0.974258542060852,
+            "frame_digest": "d45ffdfad8063ec301e4e084ab948106d8fe1598ab0657a22939721ac641c9e9",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 1.614029049873352,
+            "forward_kl": 0.9378812313079834,
+            "frame_digest": "ad652e2f387f73eb1c6198206f27e214076f5c4ed2a898f1b7660949eb356ca4",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.6149215698242188,
+            "forward_kl": 1.0769493579864502,
+            "frame_digest": "28c6681cecccea5d1868c5ef17301222d1c9a5f89da59ca6caa4582456e9fb90",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7897224426269531,
+            "forward_kl": 0.4745604991912842,
+            "frame_digest": "2c5a5bb77ea97114f48c0fa272505371d47d809ae9420b1dbb3536e987b646a4",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 2.2962803840637207,
+            "forward_kl": 1.2512048482894897,
+            "frame_digest": "03548e8b7d2235c0755889ecffebb9e2d7350fb567b46a718ada6add7b8d6c9b",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.7902089357376099,
+            "forward_kl": 0.465976357460022,
+            "frame_digest": "78b332fb4eb31c1c74f4aef041d057d230d185d7fdbd008444b93ff7cd6d2277",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.598933458328247,
+            "forward_kl": 0.2690553665161133,
+            "frame_digest": "af76a85455de4b9b652208ea4acccd1c09d22e6e4c6e57b8af224bc47c02bb12",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.371976613998413,
+            "forward_kl": 0.28867971897125244,
+            "frame_digest": "30a1518fcac83da9d3835485a9c082ddc6807de171b4986d985560a8c4786641",
+            "top1_agreement": 1
+          },
+          {
+            "cross_entropy": 0.6933661699295044,
+            "forward_kl": 0.5573581457138062,
+            "frame_digest": "17f7583743b1dd8fe879535482d6473973151ced164ef8c0e21e2a5544a6ba85",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.3799324035644531,
+            "forward_kl": 0.2822798490524292,
+            "frame_digest": "ad8add673a3ae971ef1c91563d206ec0f117c99db50fbd748ef2ceb4bc076d93",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.3976032733917236,
+            "forward_kl": 0.4459421634674072,
+            "frame_digest": "109b9a3ca78fd85055bdbef3e2ccf599441148ea7a52852797d09d72d7720173",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.1082000732421875,
+            "forward_kl": 0.1356806755065918,
+            "frame_digest": "d661e565a66effd1565ecd081d7c5d1a62c0a836d2cd220a06143301c8da45a1",
+            "top1_agreement": 0
+          },
+          {
+            "cross_entropy": 1.091127872467041,
+            "forward_kl": 0.21773123741149902,
+            "frame_digest": "3993907710f700620f2637e9dadf445b93082f26dbc2c437546ad9e878e03d9a",
+            "top1_agreement": 1
+          }
+        ],
+        "top1_agreement": 0.3125
+      },
+      "heldout_probe_frames": 32,
+      "interpretation": "Heldout cross-entropy and forward KL decreased slightly. Top-one agreement did not change. These descriptive probe metrics do not establish a playing-strength gain.",
+      "teacher_unchanged_reported": true,
+      "updates": [
+        {
+          "cross_entropy": 1.5726683323737234,
+          "examples": 512,
+          "gradient_norm": 0.27501100301742554,
+          "optimizer_steps_total": 1,
+          "stage_updates": 1
+        },
+        {
+          "cross_entropy": 1.5274791948031634,
+          "examples": 512,
+          "gradient_norm": 0.24673548340797424,
+          "optimizer_steps_total": 2,
+          "stage_updates": 2
+        },
+        {
+          "cross_entropy": 1.5086145371897146,
+          "examples": 512,
+          "gradient_norm": 0.261421263217926,
+          "optimizer_steps_total": 3,
+          "stage_updates": 3
+        }
+      ],
+      "used_training_labels": 1536
+    },
+    "stage3_critic_calibration": {
+      "actor_freeze_verified_reported": true,
+      "exact_actor_logits_verified_reported": true,
+      "fit_epochs": [
+        {
+          "epoch": 1,
+          "examples": 963,
+          "gradient_norm": 1.366697907447815,
+          "mse_before_step": 0.9833693699920908
+        },
+        {
+          "epoch": 2,
+          "examples": 963,
+          "gradient_norm": 0.7498347759246826,
+          "mse_before_step": 0.97525767411027
+        },
+        {
+          "epoch": 3,
+          "examples": 963,
+          "gradient_norm": 0.846027672290802,
+          "mse_before_step": 0.970524898570646
+        },
+        {
+          "epoch": 4,
+          "examples": 963,
+          "gradient_norm": 0.9259068369865417,
+          "mse_before_step": 0.9655542917093136
+        },
+        {
+          "epoch": 5,
+          "examples": 963,
+          "gradient_norm": 0.8711419105529785,
+          "mse_before_step": 0.9599192776598292
+        },
+        {
+          "epoch": 6,
+          "examples": 963,
+          "gradient_norm": 0.7567551732063293,
+          "mse_before_step": 0.9541176017818669
+        },
+        {
+          "epoch": 7,
+          "examples": 963,
+          "gradient_norm": 0.6765643954277039,
+          "mse_before_step": 0.9485754397923082
+        },
+        {
+          "epoch": 8,
+          "examples": 963,
+          "gradient_norm": 0.6773256063461304,
+          "mse_before_step": 0.9433622533534793
+        }
+      ],
+      "fit_frames": 963,
+      "heldout_after": {
+        "constant_mse": 1.033782669034656,
+        "constant_training_mean": 0.1838006230529595,
+        "count": 512,
+        "mean_bias": 0.11972823376731867,
+        "mse": 1.040165321165996
+      },
+      "heldout_before": {
+        "constant_mse": 1.033782669034656,
+        "constant_training_mean": 0.1838006230529595,
+        "count": 512,
+        "mean_bias": 0.11444492509326665,
+        "mse": 1.0324224435856417
+      },
+      "heldout_frames": 512,
+      "independent_actor_evidence": "All eight calibration checkpoints changed only four critic tensors within state_dict. Actor logits were identical on all 512 heldout frames. Nonpersistent student buffers and historical process memory remain outside this audit.",
+      "interpretation": "The fixed eight-epoch calibration worsened heldout MSE and finished worse than the constant training-mean predictor. This is a negative calibration result. Heldout metrics did not select epochs.",
+      "natural_games": {
+        "calibration": 16,
+        "calibration_heldout": 16
+      },
+      "teacher_queries_added": 0
+    },
+    "stage4_ppo": {
+      "completed_optimizer_steps": 36,
+      "completed_updates": [
+        {
+          "checkpoint_id": "checkpoint-000012",
+          "checkpoint_sha256": "509532edfe8b44f33401c4daa6c19bb638d476f18f616e795f3de4d09c24ed39",
+          "epochs": [
+            {
+              "approximate_kl": 1.1767965201568824e-05,
+              "entropy": 1.5206400573153578,
+              "epoch": 1,
+              "genuine_steps": 4171,
+              "gradient_norm": 2.4833388328552246,
+              "learner_steps": 4171,
+              "policy_loss": -7.254570610687114e-10,
+              "value_loss": 1.0320787760343144
+            },
+            {
+              "approximate_kl": 5.0274648330972337e-05,
+              "entropy": 1.5204242302399127,
+              "epoch": 2,
+              "genuine_steps": 4171,
+              "gradient_norm": 0.7526459693908691,
+              "learner_steps": 4171,
+              "policy_loss": -0.00023305083710514546,
+              "value_loss": 0.9727235308970453
+            },
+            {
+              "approximate_kl": 0.00013494919020620632,
+              "entropy": 1.520175447283359,
+              "epoch": 3,
+              "genuine_steps": 4171,
+              "gradient_norm": 1.0288282632827759,
+              "learner_steps": 4171,
+              "policy_loss": -0.00048248315753698955,
+              "value_loss": 0.9736143329594488
+            },
+            {
+              "approximate_kl": 0.00026626194365197454,
+              "entropy": 1.5197958662709434,
+              "epoch": 4,
+              "genuine_steps": 4171,
+              "gradient_norm": 1.34154212474823,
+              "learner_steps": 4171,
+              "policy_loss": -0.0007811145617657004,
+              "value_loss": 0.974628531448392
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 15,
+          "ppo_update": 1,
+          "terminal_batch_choices": 4171,
+          "terminal_games": 46
+        },
+        {
+          "checkpoint_id": "checkpoint-000013",
+          "checkpoint_sha256": "009ffb744dbdfb150ba7f45d2303b9a720d40408127f185490806f2123385427",
+          "epochs": [
+            {
+              "approximate_kl": 9.987985913578726e-06,
+              "entropy": 1.5027736818982451,
+              "epoch": 1,
+              "genuine_steps": 4098,
+              "gradient_norm": 2.4090635776519775,
+              "learner_steps": 4098,
+              "policy_loss": 4.990783643559621e-10,
+              "value_loss": 0.8741407127511867
+            },
+            {
+              "approximate_kl": 2.8534283351134912e-05,
+              "entropy": 1.502546640824784,
+              "epoch": 2,
+              "genuine_steps": 4098,
+              "gradient_norm": 2.1774773597717285,
+              "learner_steps": 4098,
+              "policy_loss": 7.47809056865404e-05,
+              "value_loss": 0.8604873924312973
+            },
+            {
+              "approximate_kl": 4.970226363556643e-05,
+              "entropy": 1.5024850496784994,
+              "epoch": 3,
+              "genuine_steps": 4098,
+              "gradient_norm": 1.633924961090088,
+              "learner_steps": 4098,
+              "policy_loss": 8.290497387668889e-05,
+              "value_loss": 0.8366345834257918
+            },
+            {
+              "approximate_kl": 7.729713607980266e-05,
+              "entropy": 1.502568963040608,
+              "epoch": 4,
+              "genuine_steps": 4098,
+              "gradient_norm": 0.9140559434890747,
+              "learner_steps": 4098,
+              "policy_loss": 3.409613071504475e-05,
+              "value_loss": 0.8141981878182921
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 19,
+          "ppo_update": 2,
+          "terminal_batch_choices": 4098,
+          "terminal_games": 45
+        },
+        {
+          "checkpoint_id": "checkpoint-000014",
+          "checkpoint_sha256": "0f6f38b591f73eb9a5363a9408aa0bcd8fdbd047cd81328c549c9ca6a47f4c4c",
+          "epochs": [
+            {
+              "approximate_kl": 1.0107226235802144e-05,
+              "entropy": 1.5284155135258426,
+              "epoch": 1,
+              "genuine_steps": 4184,
+              "gradient_norm": 0.961044192314148,
+              "learner_steps": 4184,
+              "policy_loss": 5.248986132896927e-10,
+              "value_loss": 0.8799516631158569
+            },
+            {
+              "approximate_kl": 4.327626612528253e-05,
+              "entropy": 1.5286032796817741,
+              "epoch": 2,
+              "genuine_steps": 4184,
+              "gradient_norm": 1.2712700366973877,
+              "learner_steps": 4184,
+              "policy_loss": -0.00011656092615520714,
+              "value_loss": 0.8877008949864096
+            },
+            {
+              "approximate_kl": 0.00010331186497239966,
+              "entropy": 1.5287402830804226,
+              "epoch": 3,
+              "genuine_steps": 4184,
+              "gradient_norm": 1.3453971147537231,
+              "learner_steps": 4184,
+              "policy_loss": -0.000277401461354351,
+              "value_loss": 0.8878267729017397
+            },
+            {
+              "approximate_kl": 0.00019464627241078252,
+              "entropy": 1.5288300089837261,
+              "epoch": 4,
+              "genuine_steps": 4184,
+              "gradient_norm": 1.2430514097213745,
+              "learner_steps": 4184,
+              "policy_loss": -0.0004681979655886926,
+              "value_loss": 0.8802785044304489
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 23,
+          "ppo_update": 3,
+          "terminal_batch_choices": 4184,
+          "terminal_games": 43
+        },
+        {
+          "checkpoint_id": "checkpoint-000015",
+          "checkpoint_sha256": "efd0b145a32510b9bc528c66d4b13fecd9f4a384124158ea98021afc0edf10d5",
+          "epochs": [
+            {
+              "approximate_kl": 1.3209345544326291e-05,
+              "entropy": 1.5357008577528741,
+              "epoch": 1,
+              "genuine_steps": 4199,
+              "gradient_norm": 2.2903082370758057,
+              "learner_steps": 4199,
+              "policy_loss": -3.799508007480343e-10,
+              "value_loss": 1.0044317468397512
+            },
+            {
+              "approximate_kl": 5.358969179792807e-05,
+              "entropy": 1.5357873111033482,
+              "epoch": 2,
+              "genuine_steps": 4199,
+              "gradient_norm": 1.884818434715271,
+              "learner_steps": 4199,
+              "policy_loss": -0.0001378586701415555,
+              "value_loss": 0.9756981505116087
+            },
+            {
+              "approximate_kl": 0.00012787423052419258,
+              "entropy": 1.535929328744031,
+              "epoch": 3,
+              "genuine_steps": 4199,
+              "gradient_norm": 1.2609339952468872,
+              "learner_steps": 4199,
+              "policy_loss": -0.0003346781606283392,
+              "value_loss": 0.9481228367150709
+            },
+            {
+              "approximate_kl": 0.00025462588161087916,
+              "entropy": 1.5361346956746151,
+              "epoch": 4,
+              "genuine_steps": 4199,
+              "gradient_norm": 0.4225630760192871,
+              "learner_steps": 4199,
+              "policy_loss": -0.0006009731209958454,
+              "value_loss": 0.9305413169189718
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 27,
+          "ppo_update": 4,
+          "terminal_batch_choices": 4199,
+          "terminal_games": 45
+        },
+        {
+          "checkpoint_id": "checkpoint-000016",
+          "checkpoint_sha256": "1ccd05ad1ab94cd262daa04ea73887e36345f78afa956bd25f9853c5f56cbaf4",
+          "epochs": [
+            {
+              "approximate_kl": 2.3521261185189237e-05,
+              "entropy": 1.5232778421928805,
+              "epoch": 1,
+              "genuine_steps": 4158,
+              "gradient_norm": 1.5796525478363037,
+              "learner_steps": 4158,
+              "policy_loss": 7.174955141738687e-10,
+              "value_loss": 0.9367270605202286
+            },
+            {
+              "approximate_kl": 8.873312655521927e-05,
+              "entropy": 1.5235190856278944,
+              "epoch": 2,
+              "genuine_steps": 4158,
+              "gradient_norm": 2.2712814807891846,
+              "learner_steps": 4158,
+              "policy_loss": -0.00017631835124770796,
+              "value_loss": 0.9608864535529644
+            },
+            {
+              "approximate_kl": 0.00018805425466781144,
+              "entropy": 1.5237012571041872,
+              "epoch": 3,
+              "genuine_steps": 4158,
+              "gradient_norm": 2.6131110191345215,
+              "learner_steps": 4158,
+              "policy_loss": -0.0003530961753304933,
+              "value_loss": 0.9759850097697411
+            },
+            {
+              "approximate_kl": 0.00031588381321164563,
+              "entropy": 1.523829860848376,
+              "epoch": 4,
+              "genuine_steps": 4158,
+              "gradient_norm": 2.6631510257720947,
+              "learner_steps": 4158,
+              "policy_loss": -0.0005278292072484982,
+              "value_loss": 0.9776276678219592
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 31,
+          "ppo_update": 5,
+          "terminal_batch_choices": 4158,
+          "terminal_games": 44
+        },
+        {
+          "checkpoint_id": "checkpoint-000017",
+          "checkpoint_sha256": "14d32becb207d73179d4f6526a5ca53bc7d13625079e6593cc1d9ee891a7c10a",
+          "epochs": [
+            {
+              "approximate_kl": 1.693477931522165e-05,
+              "entropy": 1.51799554105134,
+              "epoch": 1,
+              "genuine_steps": 4189,
+              "gradient_norm": 1.283313512802124,
+              "learner_steps": 4189,
+              "policy_loss": 2.6607881533930594e-10,
+              "value_loss": 0.9589705090301958
+            },
+            {
+              "approximate_kl": 7.213892259509439e-05,
+              "entropy": 1.5180838470471552,
+              "epoch": 2,
+              "genuine_steps": 4189,
+              "gradient_norm": 0.9060450196266174,
+              "learner_steps": 4189,
+              "policy_loss": -0.00024905462033704363,
+              "value_loss": 0.9496743358257241
+            },
+            {
+              "approximate_kl": 0.00018023429130422633,
+              "entropy": 1.5181789741962384,
+              "epoch": 3,
+              "genuine_steps": 4189,
+              "gradient_norm": 0.4004867672920227,
+              "learner_steps": 4189,
+              "policy_loss": -0.0005559072259816901,
+              "value_loss": 0.9416799063001271
+            },
+            {
+              "approximate_kl": 0.00035619041102209813,
+              "entropy": 1.5182859801568873,
+              "epoch": 4,
+              "genuine_steps": 4189,
+              "gradient_norm": 0.38229405879974365,
+              "learner_steps": 4189,
+              "policy_loss": -0.0009436061796302712,
+              "value_loss": 0.9391915606026661
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 35,
+          "ppo_update": 6,
+          "terminal_batch_choices": 4189,
+          "terminal_games": 44
+        },
+        {
+          "checkpoint_id": "checkpoint-000018",
+          "checkpoint_sha256": "42590aa6c986aa4ba459618c48974c8fa1e749accb8087dc4305c740ba7c0c29",
+          "epochs": [
+            {
+              "approximate_kl": 2.7980225238124694e-05,
+              "entropy": 1.5022990588541165,
+              "epoch": 1,
+              "genuine_steps": 4176,
+              "gradient_norm": 2.3107359409332275,
+              "learner_steps": 4176,
+              "policy_loss": -9.329604129179603e-10,
+              "value_loss": 0.9872258526212394
+            },
+            {
+              "approximate_kl": 0.00010405657436563773,
+              "entropy": 1.5023380715642576,
+              "epoch": 2,
+              "genuine_steps": 4176,
+              "gradient_norm": 2.4284117221832275,
+              "learner_steps": 4176,
+              "policy_loss": -0.00017493308839572276,
+              "value_loss": 0.9914931334069891
+            },
+            {
+              "approximate_kl": 0.0002184531679590963,
+              "entropy": 1.5023313567784509,
+              "epoch": 3,
+              "genuine_steps": 4176,
+              "gradient_norm": 2.333775758743286,
+              "learner_steps": 4176,
+              "policy_loss": -0.00035466020298853627,
+              "value_loss": 0.9842036497882684
+            },
+            {
+              "approximate_kl": 0.00036454318370200174,
+              "entropy": 1.5022876899675062,
+              "epoch": 4,
+              "genuine_steps": 4176,
+              "gradient_norm": 2.040097951889038,
+              "learner_steps": 4176,
+              "policy_loss": -0.0005389488399824008,
+              "value_loss": 0.967775623314083
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 39,
+          "ppo_update": 7,
+          "terminal_batch_choices": 4176,
+          "terminal_games": 46
+        },
+        {
+          "checkpoint_id": "checkpoint-000019",
+          "checkpoint_sha256": "b0a3ac53b398391abcb48a5eda321aee4e00f2f7b4bae628ce9df4ab33b6c15d",
+          "epochs": [
+            {
+              "approximate_kl": 1.7009941202522115e-05,
+              "entropy": 1.5331788680743936,
+              "epoch": 1,
+              "genuine_steps": 4130,
+              "gradient_norm": 2.7482848167419434,
+              "learner_steps": 4130,
+              "policy_loss": 7.235948170942336e-10,
+              "value_loss": 0.9734128736807431
+            },
+            {
+              "approximate_kl": 6.85074155313783e-05,
+              "entropy": 1.5331026206149327,
+              "epoch": 2,
+              "genuine_steps": 4130,
+              "gradient_norm": 2.0456879138946533,
+              "learner_steps": 4130,
+              "policy_loss": -0.0003395847947014987,
+              "value_loss": 0.9382759847378315
+            },
+            {
+              "approximate_kl": 0.0001622587479403137,
+              "entropy": 1.5330072828701597,
+              "epoch": 3,
+              "genuine_steps": 4130,
+              "gradient_norm": 1.169732689857483,
+              "learner_steps": 4130,
+              "policy_loss": -0.0006973419532342945,
+              "value_loss": 0.909234118191006
+            },
+            {
+              "approximate_kl": 0.00032632990942872784,
+              "entropy": 1.5328859637926622,
+              "epoch": 4,
+              "genuine_steps": 4130,
+              "gradient_norm": 0.23858685791492462,
+              "learner_steps": 4130,
+              "policy_loss": -0.0011009334027122768,
+              "value_loss": 0.8943751366786465
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 43,
+          "ppo_update": 8,
+          "terminal_batch_choices": 4130,
+          "terminal_games": 47
+        },
+        {
+          "checkpoint_id": "checkpoint-000020",
+          "checkpoint_sha256": "42d94de72a034bf36e317fddae2f2fc8e04226f580e4ec094062a7abf18a8b6c",
+          "epochs": [
+            {
+              "approximate_kl": 2.5660163383046457e-05,
+              "entropy": 1.5677317826392647,
+              "epoch": 1,
+              "genuine_steps": 4141,
+              "gradient_norm": 2.4997692108154297,
+              "learner_steps": 4141,
+              "policy_loss": 3.5563440907437904e-10,
+              "value_loss": 0.9808084091067705
+            },
+            {
+              "approximate_kl": 9.674140812875058e-05,
+              "entropy": 1.5674688585338257,
+              "epoch": 2,
+              "genuine_steps": 4141,
+              "gradient_norm": 2.958911657333374,
+              "learner_steps": 4141,
+              "policy_loss": -0.0001965362979666283,
+              "value_loss": 1.01495948121891
+            },
+            {
+              "approximate_kl": 0.00020590789831033334,
+              "entropy": 1.5671647588172102,
+              "epoch": 3,
+              "genuine_steps": 4141,
+              "gradient_norm": 3.168827772140503,
+              "learner_steps": 4141,
+              "policy_loss": -0.0003877595646590363,
+              "value_loss": 1.0345071668803454
+            },
+            {
+              "approximate_kl": 0.00034767338880125937,
+              "entropy": 1.56682599650233,
+              "epoch": 4,
+              "genuine_steps": 4141,
+              "gradient_norm": 3.2055397033691406,
+              "learner_steps": 4141,
+              "policy_loss": -0.000574600500781765,
+              "value_loss": 1.0374312050527237
+            }
+          ],
+          "optimizer_steps": 4,
+          "optimizer_steps_total": 47,
+          "ppo_update": 9,
+          "terminal_batch_choices": 4141,
+          "terminal_games": 45
+        }
+      ],
+      "diagnostic_scope": "Exact saved diagnostics for all nine completed updates and their four epochs each. Gradient norms are measured before clipping. Losses and entropy are training-batch diagnostics, not independent generalization measures. The discarded partial tenth update is excluded from completed diagnostics and retained in total cost.",
+      "gradient_clip": 0.5,
+      "kl_stop": 0.02
+    }
+  },
+  "learning_stages": [
+    1,
+    3,
+    4
+  ],
+  "limitations": [
+    "The shared-host campaign proves bounded execution, not a performance comparison.",
+    "Original PPO advantage and return input tensors were not serialized. Their production computation was replayed and independently crosschecked, not recovered from optimizer memory.",
+    "These audits do not independently observe historical live-process immutability or establish current-Standard actor privacy.",
+    "No new training, revised teacher buffers, dense-model arm or longer protocol is authorized by this readout.",
+    "The 76-check tensor audit compares state_dict and does not include nonpersistent buffers. The separate teacher replay checks all named teacher buffers, without observing historical student-buffer memory."
+  ],
+  "model_contract": {
+    "frozen_teacher_card_semantics": "reader",
+    "original_teacher_program_artifact_sha256": "8ac484a7d867a11a41dc7c1349616d0a3acf8364eac80d51d31c977bfeb99520",
+    "student_card_semantics": "atoms",
+    "teacher_checkpoint_sha256": "f3d38a0dafae01c748284ed39d9ba49f5923cde8cac3496a0fc3609c1e94e8dc",
+    "teacher_encoding_note": "The unchanged frozen reader retains its original encoding. Separate C12 qualification observes rule.lillie for card 1227 as 0 in this artifact versus 1 under C12 facts. This is a declared representation difference, not a reason to silently change teacher buffers or a blanket teacher-usability rejection. C12 reader source equivalence remains false."
+  },
+  "post_campaign_audits": {
+    "calibration_replay": {
+      "games": 32,
+      "optimizer_updates": 0,
+      "separately_charged_choices": 2948,
+      "sha256": "ab957185e7ea0aec3c4d6de3b2921cbb3bea34d5fc0604486dd27e6cc69a3b13",
+      "status": "passed",
+      "teacher_queries": 0,
+      "wall_seconds": 39.673119004999535
+    },
+    "completion_matrix": [
+      {
+        "evidence": "separate 32-game replay",
+        "requirement": "exact calibration charge",
+        "status": "closed_for_all32frozen_games"
+      },
+      {
+        "evidence": "separate 1,568-query replay with all named parameter, buffer and global RNG checks",
+        "requirement": "stored committed and heldout teacher targets",
+        "status": "closed_for_all_stored_targets"
+      },
+      {
+        "evidence": "76-check stored-tensor audit",
+        "requirement": "frozen-parameter and checkpoint-logit comparisons",
+        "status": "passed_with_state_dict_scope"
+      },
+      {
+        "evidence": "The original tensor audit compares state_dict; nonpersistent buffers are outside that comparison. The new teacher replay checks all named teacher buffers only.",
+        "requirement": "nonpersistent student buffers during historical training",
+        "status": "historical_memory_not_independently_observed"
+      },
+      {
+        "evidence": "Production target computation replayed and independently checked against a TD-sum derivation; original optimizer input tensors were not serialized.",
+        "requirement": "original PPO optimizer-input tensors",
+        "status": "replay_crosscheck_only"
+      },
+      {
+        "evidence": "Existing evidence covers 29 qualified cases and 58 hidden-identity variants on the exact frozen library, with 1 skipped case. Stored-tensor audit cannot observe historical game memory.",
+        "requirement": "historical native privacy and restoration",
+        "status": "finite_prior_evidence"
+      },
+      {
+        "evidence": "Separate engine and counterfactual qualification gates remain.",
+        "requirement": "C12 actor privacy and full Standard",
+        "status": "unqualified"
+      }
+    ],
+    "composition_note": "Standalone audit receipts remain immutable. Separate 32-game and 1,568-target replays close their calibration-charge and teacher-target gaps. Their costs are separate from original training and evaluation.",
+    "evaluation_288": {
+      "2": {
+        "passed_checks": 48,
+        "sha256": "65fdb51680813251c49bcd45452721f0ecfe65173e59ae4684f43ba1a9c87cb3"
+      },
+      "3": {
+        "passed_checks": 48,
+        "sha256": "05d9e08190f085ee40797c2e5fb3e0ddcc2e4d260b5192054dcca7e250b806ef"
+      },
+      "4": {
+        "passed_checks": 48,
+        "sha256": "c538a5d63e754be754c0488970682139783a0eb5dc26dd2b12fec947b666cdaf"
+      },
+      "5": {
+        "passed_checks": 48,
+        "sha256": "3f3498a2a93ab1942179123482cbb9b5b8a1effbb1734c70e00e6576b93dedc4"
+      }
+    },
+    "existing_finite_historical_privacy": {
+      "evidence": "experiments/evidence/mew-hidden-world-counterfactual-2026-10-21.json",
+      "hidden_identity_permutations": 58,
+      "library_sha256": "b010aeea9f753a4dbb37040cc6d71b9e29f08114d519659097c37427887094b0",
+      "planned_cases": 30,
+      "qualified_cases": 29,
+      "scope": "Fixed reachable prompt encoder and actor wire invariance only. Unknown IDs permuted within belief-defined groups. Options, eligibility, records, beliefs and Game bytes fixed. No global legality-side-channel or hidden-world transition claim.",
+      "sha256": "e277f1e9b66992f787eeebfc14e4744fe057477382c36c59cf85c70fa0b1f7aa",
+      "skipped_cases": 1
+    },
+    "parent_576_receipts": {
+      "counts": {
+        "not_yet_evidenced": 6,
+        "pass": 54
+      },
+      "scope": "Original 576-game reference and checkpoint receipts; amended 288-game evaluations are independently audited above.",
+      "sha256": "005095d1fc54bc6d401d803de019943732ca91bfebf37e67cda2ee0a790f84c5",
+      "status": "receipt_checks_pass_with_open_gates"
+    },
+    "teacher_targets": {
+      "exact_probability_vectors": 1568,
+      "global_rng_unchanged": true,
+      "maximum_probability_error": 0.0,
+      "native_games": 0,
+      "optimizer_updates": 0,
+      "parameters_and_all_named_buffers_unchanged": true,
+      "peak_rss_kib": 2215508,
+      "separate_teacher_queries": 1568,
+      "sha256": "87b3d245f911c22389637c6171395175a6283012c95d6bb034eaa92a33914bbd",
+      "status": "all_stored_teacher_targets_match",
+      "tolerance": 1e-06,
+      "wall_seconds": 72.76400825999917
+    },
+    "tensors": {
+      "counts": {
+        "fail": 0,
+        "not_yet_evidenced": 4,
+        "pass": 76
+      },
+      "models_loaded": 40,
+      "native_games": 0,
+      "optimizer_updates": 0,
+      "sha256": "933a56a6e170d78897bd218ade27d75fe76f98d17cfa5a20cc40a180d2c2e5ae",
+      "standalone_open_findings": [
+        "independent teacher-target recomputation",
+        "exact calibration learner-choice count",
+        "serialized original PPO advantage/return tensors",
+        "native actor visibility and non-consuming live state/RNG/log behavior"
+      ],
+      "status": "tensor_checks_pass_with_open_gates",
+      "stored_frames_checked": 40521,
+      "teacher_queries": 0,
+      "wall_seconds": 332.729806886
+    },
+    "terminal_accounting": {
+      "sha256": "27a3a6490685db000c9149dc6fcf19efa9a61683ffb710c55be3c926fe43d7b0",
+      "status": "terminal_accounting_reconciled"
+    }
+  },
+  "schema": "native-sustained-final-readout/1",
+  "scope": "Bounded historical six-deck staged Mew campaign against a uniform legal opponent. No current-Standard or competitive-strength qualification.",
+  "status": "audited_inconclusive_strength",
+  "teacher_value_transfer_stage_2": "skipped",
+  "training": {
+    "charged_choices_after_last_completed_checkpoint": 4159,
+    "charged_learner_choices": 60633,
+    "committed_optimizer_steps": 47,
+    "completed_ppo_updates": 9,
+    "completed_training_updates": 20,
+    "completed_updates_by_stage": {
+      "1": 3,
+      "3": 8,
+      "4": 9
+    },
+    "episode_statuses": {
+      "censored": 1,
+      "terminal": 655
+    },
+    "episodes_by_ledger": {
+      "stage1-probe-episodes.jsonl": {
+        "censored": 1
+      },
+      "stage1-training-episodes.jsonl": {
+        "terminal": 173
+      },
+      "stage3-calibration-episodes.jsonl": {
+        "terminal": 16
+      },
+      "stage3-calibration_heldout-episodes.jsonl": {
+        "terminal": 16
+      },
+      "stage4-episodes.jsonl": {
+        "terminal": 450
+      }
+    },
+    "excluded_exact_probe_overlap_queries": 7,
+    "heldout_teacher_targets": 32,
+    "inflight_optimizer_steps_discarded": 2,
+    "inflight_steps_checkpoint_usable": false,
+    "learner_choice_cost_by_stage": {
+      "stage1_including_probes": 16080,
+      "stage3_including_heldout": 2948,
+      "stage4_including_discarded_update": 41605
+    },
+    "learner_choices_at_usable_checkpoint": 56474,
+    "status": "bounded_stop",
+    "stored_used_teacher_targets": 1536,
+    "teacher_queries": 1575,
+    "teacher_scoring_seconds": 66.2350326930004,
+    "training_elapsed_seconds": 5970.0053986640005,
+    "unoptimized_teacher_labels": 0
+  }
+}
