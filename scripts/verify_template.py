@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import tempfile
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parents[1]
@@ -133,6 +134,67 @@ def decision_contract():
         raise ValueError("infrastructure failure did not invalidate the rollout")
 
 
+def coverage_diagnostic_contract():
+    from tcg.standard_coverage import inventory
+
+    registry_hash = sha256(b"[]").hexdigest()
+    catalog = {
+        "schema": "tcgl-standard-catalog/1", "asOf": "2000-01-01",
+        "engine": {"version": 1, "wrapperCommit": "synthetic-parser-example",
+                   "librarySha256": "a" * 64, "registrySha256": registry_hash},
+        "sources": [{"id": "synthetic", "kind": "card_database",
+                     "url": "https://example.invalid/synthetic-parser-example",
+                     "observedAt": "2000-01-01", "authoritative": False,
+                     "completeForKind": False}],
+        "legalPrintings": [{"officialPrintingId": "SYNTHETIC-1", "regulationMark": "H",
+                            "canonicalEffectIdentity": "synthetic-effect", "effectTextSha256": "b" * 64,
+                            "liveLegalFrom": "2000-01-01", "legalitySourceIds": ["synthetic"]}],
+        "ruleGates": [],
+    }
+    registry = {"schema": "cabt-registry-snapshot/1", "rawSha256": registry_hash, "entries": []}
+    absent = inventory(catalog, registry, [], [])
+    aliases = [{"officialPrintingId": "SYNTHETIC-1", "cabtCardId": 1,
+                "method": "name_candidate", "identitySourceIds": ["synthetic"]}]
+    unresolved = inventory(catalog, registry, aliases, [])
+    require(absent["printingStatusCounts"] == {"absent": 1}
+            and unresolved["printingStatusCounts"] == {"identity_unresolved": 1},
+            "synthetic missing or unsupported identities escaped inventory accounting")
+    require(all(report["fullStandardQualified"] is False
+                and report["denominator"]["legalPrintingCount"] is None for report in (absent, unresolved)),
+            "synthetic parser examples cannot qualify a Standard denominator")
+    try:
+        inventory(catalog, {**registry, "rawSha256": "c" * 64}, [], [])
+    except ValueError as error:
+        require("hash differs" in str(error), "registry probe failed for an unrelated reason")
+    else:
+        raise ValueError("mismatched registry pin was accepted")
+
+    environment = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
+    probe = command(["-c", "import json,sys; import tcg.standard_coverage,tcg.live_parity,tcg.standard_parity; "
+                     "print(json.dumps({'external_runtime_loaded': any(name in sys.modules for name in "
+                     "('torch','numpy','fastenc','tcg.parity_runner'))}))"])
+    require(probe["external_runtime_loaded"] is False, "coverage diagnostic imports loaded a native/model runtime")
+    for name in ("inventory_standard.py", "check_standard_parity.py"):
+        for arguments, expected, output, marker in ((["--help"], 0, "stdout", "--output"),
+                                                    ([], 2, "stderr", "required")):
+            result = subprocess.run([sys.executable, f"scripts/{name}", *arguments], cwd=ROOT,
+                                    env=environment, capture_output=True, text=True, timeout=45)
+            require(result.returncode == expected and marker in getattr(result, output),
+                    f"coverage diagnostic CLI contract failed: {name} {arguments}")
+    with tempfile.TemporaryDirectory(prefix="tcg-coverage-parser-") as temporary:
+        pool = Path(temporary) / "synthetic-pool.json"
+        pool.write_bytes(b"{}")
+        output = ROOT / "runs" / f"{Path(temporary).name}.json"
+        require(not output.exists(), "preserve an existing diagnostic probe output")
+        result = subprocess.run(
+            [sys.executable, "scripts/check_standard_parity.py", "--pool", str(pool),
+             "--pool-sha256", "0" * 64, "--full-report", str(Path(temporary) / "missing-report.json"),
+             "--full-report-sha256", "0" * 64, "--output", str(output)],
+            cwd=ROOT, env=environment, capture_output=True, text=True, timeout=45)
+        require(result.returncode != 0 and "input hash mismatch" in result.stderr and not output.exists(),
+                "coverage projection must reject a mismatched pool pin before writing output")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--require-full-standard", action="store_true")
@@ -141,6 +203,7 @@ def main():
         count = exported_sources()
         summary = coverage_summary()
         decision_contract()
+        coverage_diagnostic_contract()
         planner = command(["scripts/plan_campaign.py"])
         require(planner["execution_authorized"] is False, "planner must not authorize a campaign")
         readiness = command(["scripts/check_readiness.py"], expected=2)
@@ -154,7 +217,8 @@ def main():
         parser.exit(1, f"template verification failed: {error}\n")
     result = {"template": "verified", "exported_files": count,
               "checks": ["source_hashes", "source_ast", "publication_hygiene", "coverage_accounting",
-                         "ordered_legal_selection", "rollout_outcomes", "nonexecuting_planner",
+                         "ordered_legal_selection", "rollout_outcomes", "synthetic_coverage_parser_contract",
+                         "coverage_cli_boundaries", "nonexecuting_planner",
                          "expected_blocked_readiness", "288_game_evaluation_plan"],
               "full_standard": "blocked", "matched_declared_requirements": summary["caseStatusCounts"]["oracle_matched"],
               "total_declared_requirements": summary["denominator"]["requiredCases"],

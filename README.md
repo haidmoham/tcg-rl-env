@@ -157,3 +157,46 @@ card text dumps, or private paths as coverage evidence.
 The maintainer runs the verifier, confirms the expected full-Standard rejection,
 and checks a clean clone before pushing a refresh. CI repeats the public checks
 on Linux and Windows. Restricted native qualification remains external.
+
+## Inspect your own coverage inputs
+
+The source export includes the existing printing inventory and Standard
+projection tools. They use the standard library. Supply your own authorized
+catalog, registry, snapshots, and measurement reports. The public repository
+contains none of those restricted inputs.
+
+```sh
+python scripts/inventory_standard.py --help
+python scripts/check_standard_parity.py --help
+```
+
+`inventory_standard.py` reports each supplied printing as absent, unresolved,
+or untested. Its source declarations and evidence references do not establish
+independent qualification. Its denominator remains unresolved.
+
+`check_standard_parity.py` checks input hashes and projects an existing full
+measurement report onto an exact dated pool. It retains missing printings in
+the denominator and reports row, program, and requirement statuses. This version
+requires artifacts compatible with its embedded historical `LIVE_PINS`.
+Independently collected snapshots are not interchangeable with that corpus.
+Set the following variables to compatible local input paths and their SHA-256
+digests.
+
+```sh
+python scripts/check_standard_parity.py \
+  --pool "$POOL_JSON" --pool-sha256 "$POOL_SHA256" \
+  --full-report "$REPORT_JSON" --full-report-sha256 "$REPORT_SHA256" \
+  --output runs/standard-projection.json
+```
+
+Use a new output path under `runs/`. Reports can contain restricted source
+identities and remain ignored by Git. The projection checks saved inputs and
+performs no native execution. It cannot independently establish the original
+measurements or current server legality. It trusts status assertions in the
+supplied report. Hashes identify those assertions and do not authenticate them.
+
+The source report's `fullCurrentStandardParityQualified` flag is a diagnostic
+from that measurement system. It can coexist with `rulingsPassDeferred`.
+It does not unlock the template's full-Standard gate. The low-level
+`live_parity.inventory(native_execution=...)` route requires the separate
+native fixture toolchain, which this source export does not include.

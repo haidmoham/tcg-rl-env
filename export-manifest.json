@@ -18,9 +18,11 @@
     "scripts/audit_native_evaluation_288.py": "fb5350266268cb432f2983dfbf2bdb89d7e9a6e782f815fe785a682367427603",
     "scripts/audit_native_pilot.py": "86a3baf789f7f1a57dd636f4d4207fe4033df30137e255b2f17f394cfb5a2d1d",
     "scripts/check_readiness.py": "358f532e4d3e27f824b37cffd779367a8a9b8e7bc16ccd07c994a2bd601ab177",
+    "scripts/check_standard_parity.py": "56435d15b02776c041b2ed84c572c52e4d5c434ce07af28152358f55e71d0ae3",
     "scripts/evaluate_native_checkpoint.py": "8ff5840a78fcbee6a96a7fd0c5785dbc0faeb3c5694c7175152852fd6a609752",
     "scripts/evaluate_native_checkpoint_288.py": "4e0bf3995d5fbe8da807ede8b768a94441d92a749620c9e05b99d92becdc11ad",
     "scripts/evaluate_native_pilot.py": "64da14147255b3b5d39838279f6995433afd3b46e1c95c01fe0385b709936079",
+    "scripts/inventory_standard.py": "dc5256a3f0aca5c9ff489da50998e794dee2f9f79a71bc2dec1ff76928b26e07",
     "scripts/plan_campaign.py": "2c7653883774df6da92aa9779594765f422114cab4fafd03d4d921e3b3d59dd6",
     "scripts/prepare_native_pilot_bindings.py": "2c3061e83b1cb17a5475fc005d625f6b4c68934b056d2d273ccac164e9aaef5d",
     "scripts/resume_native_campaign_288.py": "6a072d007474b258408c9cd9a611f3e42f2a68716459218f8d238081791c8e13",
@@ -36,6 +38,7 @@
     "tcg/decision.py": "ce8896d1754ad9c73fcf764b8109f13a2327cd26a15c8e89243b5b43e1dfcc96",
     "tcg/episode_runner.py": "47954b21b690b8045c42daf489cda0753b0547a50a11b623be654f91d8e01648",
     "tcg/heuristic.py": "82bdda0c926c8db7fa1133b229a6ce0e52ec0f42aef9c9aee775a04af6d5422f",
+    "tcg/live_parity.py": "134ff9ea37fac7be2df6d92eadc7998d063b182b63e66735151ec6b9de575d64",
     "tcg/mew_baseline_bridge.py": "575d6ee275e1e39470006d2b95e524c14ae0333a324f2096aeae6f4c44674f92",
     "tcg/native_actorcritic.py": "d37e31ad0527a4a9a16d60542f30b5db10c40da20e900dc8425ec363325f3f17",
     "tcg/native_distillation.py": "49b6d1286955e64584ee72d5cb7b26a3e6ae177346fa7748864f26cc306ddc31",
@@ -47,6 +50,8 @@
     "tcg/ppo_update.py": "66106e6710f3fd9cdd708c6f7b57ba627b63ca7303197e4e0a9ff3e561fe7149",
     "tcg/resume.py": "5eb6859ad5a77da78ab3a3c80b742ecf9cf4731652c4ec2ef576311f059a230e",
     "tcg/rollout.py": "a938cb1e54f090e3c89ff048ce8d2f3a056cd15cef16d8a7e78dfee0ce4355c4",
+    "tcg/standard_coverage.py": "380a17427c2ff269d1dfa8c173ecfe0f8fc0b67715ab79a5fd11c727099a24a2",
+    "tcg/standard_parity.py": "5e7b6b398db4856450ce45a43f44f0b9cd6c375d04d38e74ab61f1ec7690f452",
     "tcg/training_checkpoint.py": "6a3a9f2ed47d4ea3b67bb8edf58c1e597b9dda763b02766173f68ce6f4bc617c"
   }
 }
