@@ -10,7 +10,7 @@ requires-python = ">=3.10"
 license = {file = "LICENSE"}
 
 [project.optional-dependencies]
-policy = ["torch==2.5.1"]
+policy = ["torch==2.13.0"]
 
 [tool.setuptools.packages.find]
 include = ["tcg"]
