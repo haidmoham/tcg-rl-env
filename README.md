@@ -73,17 +73,20 @@ supported actor-visible wire observations and rejects unsupported prompts.
 
 ## Supply a training runtime
 
-The generic package has no required third-party dependency. Install the
-historical policy prototype separately when you need its PyTorch components.
+The generic package has no required third-party dependency.
 
 ```sh
 python -m pip install .
-python -m pip install -r requirements-policy.txt
 ```
 
-Use Python 3.10 through 3.12 for that historical policy prototype. Its
-requirements do not recreate the separately qualified native
-Mew runtime. The optional native recipes require a compatible user-supplied Mew
+Policy components require a separately qualified PyTorch runtime. The template's
+offline checks do not qualify that runtime. The original prototype's Torch 2.5.1
+install pin is excluded because it is affected by
+[CVE-2025-32434](https://github.com/pytorch/pytorch/security/advisories/GHSA-53q9-r3pm-6pq6).
+Its original source hash remains in `export-manifest.json` as historical
+provenance. Frozen experiment dependencies stay unchanged.
+
+The optional native recipes require a compatible user-supplied Mew
 source tree, an authorized CABT engine, exact deck manifests, and, for teacher
 transfer, an authorized checkpoint. Obtain redistribution and usage rights for
 those inputs separately. This repository's MIT license covers its project code.

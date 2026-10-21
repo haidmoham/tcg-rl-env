@@ -6,6 +6,15 @@
     "license": "MIT"
   },
   "scope": "Reviewed project-owned generic contracts and optional historical recipes. No engine or vendor artifacts.",
+  "excludedHistoricalInputs": [
+    {
+      "path": "requirements-policy.txt",
+      "sha256": "8049eb34ab1429faf23b56ab9d5edc0b20ef0e2d9a98f319eec5505a7277850e",
+      "recordedRequirement": "torch==2.5.1",
+      "reason": "Historical prototype pin excluded from public installation because it is affected by CVE-2025-32434. Frozen source and experiment dependencies remain unchanged.",
+      "advisory": "https://github.com/pytorch/pytorch/security/advisories/GHSA-53q9-r3pm-6pq6"
+    }
+  ],
   "files": {
     "LICENSE": "7e1bc4089201a392c0e5af89e09aa0a71556312b81e2681f9a5be80c55a6cb9a",
     "experiments/mew-evaluation-288-v1.json": "d226d073e83c8ec6df2565905994e33f3f1d522ef1b153d14c47879984d3cae7",
@@ -13,7 +22,6 @@
     "experiments/mew-student-stage1-v1.json": "6113aa90d339d0cd3a87875fcaa954bb868a2049a885da85b03b8f92f6057a3a",
     "experiments/mew-sustained-v1.json": "e0cc3b8d05a038f2b10d2a81013933d8a7f2be833d3a7be8bc05b4eaeff8f46d",
     "experiments/r0-reference.json": "0700b37137558d92876ece5f2406716244525984c6d3973a11c8a1b402507a15",
-    "requirements-policy.txt": "8049eb34ab1429faf23b56ab9d5edc0b20ef0e2d9a98f319eec5505a7277850e",
     "scripts/audit_native_campaign.py": "7b7e10766d9576b0f82e911567fd23f5ee8c5fb270a90877269a2255c3b29784",
     "scripts/audit_native_evaluation_288.py": "fb5350266268cb432f2983dfbf2bdb89d7e9a6e782f815fe785a682367427603",
     "scripts/audit_native_pilot.py": "86a3baf789f7f1a57dd636f4d4207fe4033df30137e255b2f17f394cfb5a2d1d",

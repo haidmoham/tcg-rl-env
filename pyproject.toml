@@ -9,8 +9,5 @@ description = "Reusable TCG RL contracts, historical learning recipes, and cover
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
 
-[project.optional-dependencies]
-policy = ["torch==2.5.1"]
-
 [tool.setuptools.packages.find]
 include = ["tcg"]
