@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tcg-rl-env"
+version = "0.1.0"
+description = "Reusable TCG RL contracts, historical learning recipes, and coverage qualification tools"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+
+[project.optional-dependencies]
+policy = ["torch==2.5.1"]
+
+[tool.setuptools.packages.find]
+include = ["tcg"]

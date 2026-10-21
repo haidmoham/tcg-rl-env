@@ -1,0 +1,60 @@
+{
+  "schema": "86-tcg-agent/native-actorcritic/1",
+  "execution_enabled": true,
+  "sequence": [
+    3,
+    4
+  ],
+  "skipped_stage": 2,
+  "teacher_access": "forbidden",
+  "scope": "Historical six-deck stage-1 continuation. No current Standard or playing-strength claim.",
+  "opponent": "fixed_uniform_native_legal",
+  "limits": {
+    "wall_seconds": 7200,
+    "admitted_learner_microsteps": 100000,
+    "stage3_wall_seconds": 1200,
+    "stage4_wall_seconds": 2400,
+    "finalization_reserve_seconds": 30,
+    "per_game_wall_seconds": 120,
+    "max_game_microsteps": 4096
+  },
+  "calibration": {
+    "training_games": 4,
+    "heldout_games": 4,
+    "max_training_examples": 128,
+    "max_heldout_examples": 128,
+    "epochs": 1,
+    "lr": 0.0001,
+    "trainable": "value_head only; actor and encoder bitwise frozen",
+    "target": "real terminal learner-seat outcome +1/-1/0; no teacher values",
+    "admission": "Only frames from naturally terminal games. First bounded retained learner frames per complete episode, capped globally at 128 for fitting. Independent heldout games require natural completion."
+  },
+  "ppo": {
+    "gamma": 1.0,
+    "gae_lambda": 0.95,
+    "clip": 0.2,
+    "entropy_coef": 0.01,
+    "value_coef": 0.5,
+    "lr": 0.0001,
+    "weight_decay": 0.0,
+    "grad_clip": 0.5,
+    "max_epochs": 4,
+    "kl_stop": 0.02,
+    "max_updates": 2,
+    "episodes_per_update": 2,
+    "optimizer_batch": "One full admitted two-episode batch per epoch with framewise gradient accumulation. At most four optimizer steps per update. No minibatch reshuffling.",
+    "value_target": "Terminal Monte Carlo outcome MSE; GAE is a separate advantage estimator using frozen OLD student values.",
+    "forced_choices": "Excluded from policy loss, entropy and policy advantage normalization; retained for value fitting. Native auto-forced transitions remain environment work.",
+    "kl_measure": "Mean sampled-action nonnegative approximate KL exp(logratio)-1-logratio on genuine learner choices, measured across the full frozen batch after each epoch."
+  },
+  "seeds": {
+    "calibration": 861101,
+    "calibration_heldout": 861201,
+    "ppo": 861301,
+    "optimizer": 861401
+  },
+  "budget_accounting": "Carry actual stage-1 wall and learner-choice counters into this invocation. Stage3+4 includes source validation, startup, collection, optimization and checkpoint work. The original 7200-second/100000-choice arm cap never resets. Stage1 allocation1800, stage3 allocation1200, stage4 allocation2400, independent evaluation allocation1800. No extra teacher queries, GPU or league work.",
+  "evaluation": "Separate root-owned fixed seeded evaluation of stage1 actor, stage3 pre-RL actor and stage4 endpoint against the same fixed uniform legal opponent. Calibration MSE and PPO diagnostics do not establish playing strength.",
+  "checkpoint_invariants": "Stage1 actor copy, stage3 pre-RL and stage4 endpoint each have immutable model, optimizer/RNG and source/input lineage receipts. Only checkpoints with a completed JSON receipt are usable. A fault or timeout during an optimizer update prohibits saving that partial update as a usable endpoint.",
+  "runtime": "Linux CPU1 nice19, one torch thread, deterministic float32 eager CPU. Exact pinned historical libfastenc, schema and decks. No teacher model load, no league, no live play."
+}

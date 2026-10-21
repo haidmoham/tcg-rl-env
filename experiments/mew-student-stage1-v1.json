@@ -1,0 +1,90 @@
+{
+  "schema": "86-tcg-agent/mew-student-stage1/1",
+  "execution_enabled": true,
+  "roadmap_issue": "https://github.com/haidmoham/86-tcg-agent/issues/3",
+  "stage": "policy_only_distillation",
+  "scope": "Historical six-deck plumbing and transfer pilot. Current Standard integration requires a separate dated engine, vocabulary, reader and exact-deck qualification receipt. No ranked-readiness claim.",
+  "student": {
+    "d_model": 128,
+    "n_layers": 2,
+    "n_heads": 4,
+    "ffn_mult": 2,
+    "dropout": 0.0
+  },
+  "learning": {
+    "lr": 0.0001,
+    "temperature": 1.0,
+    "query_probability": 0.1,
+    "update_every_queried_choices": 32,
+    "max_updates": 8
+  },
+  "limits": {
+    "wall_seconds": 7200,
+    "stage_wall_seconds": 1800,
+    "finalization_reserve_seconds": 30,
+    "admitted_learner_microsteps": 100000,
+    "teacher_query_seconds": 1800,
+    "teacher_queries": 25000,
+    "max_game_microsteps": 4096,
+    "per_game_wall_seconds": 120
+  },
+  "microstep_definition": "One explicit learner-scored native atomic prefix choice. Auto-forced transitions are unscored environment work, separately reported by native forcedUnique/forcedSingle/decisions/appends/submits. Their seat and expanded choice counts are unavailable; these units are not comparable to historical baseline admitted microsteps. All environment work counts against wall time.",
+  "pilot_sequence": {
+    "roadmap_stages": [
+      1,
+      3,
+      4
+    ],
+    "skipped_stage": 2,
+    "total_wall_seconds_per_arm": 7200,
+    "stage_wall_allocations": {
+      "policy_transfer": 1800,
+      "outcome_critic_calibration": 1200,
+      "fixed_pool_ppo": 2400,
+      "evaluation": 1800
+    },
+    "accounting": "Stage boundaries do not reset the 7200-second or 100000 admitted-learner-choice arm budget. Charge query, collection, optimization, checkpoint, startup and evaluation work. The initial scratch reference is a separately declared control arm. Interleaved evaluation charges each arm its active elapsed work plus shared startup, and retains total invocation wall time.",
+    "critic_initialization": "Ordinary fresh student value head. No teacher-value queries or labels.",
+    "league": "Not implemented in this pilot. An inconclusive playing-strength result does not authorize advancement."
+  },
+  "seeds": {
+    "student_init": 860600,
+    "training": 860601,
+    "probe": 860701,
+    "evaluation": 860801
+  },
+  "probe": {
+    "max_frames": 32,
+    "max_microsteps": 2000
+  },
+  "evaluation": {
+    "games_per_checkpoint": 72,
+    "primary_contrasts": [
+      "distilled_student_vs_initial",
+      "post_ppo_vs_exact_pre_rl_student"
+    ],
+    "family_alpha": 0.05,
+    "per_contrast_alpha": 0.025,
+    "uncertainty_unit": "36 independent deck-pair clusters with two seats per cluster; paired differences bounded in [-1,1] and all unresolved outcomes included adversarially",
+    "max_game_microsteps": 4096,
+    "assignment": "All 36 ordered six-deck pairs, learner in each seat. Initial and transferred checkpoints share the same independent environment and opponent-action seed assignments.",
+    "opponent": "Frozen uniform distribution over the current legal native columns, using an independent seeded action generator. This weak anchor establishes a bounded integration comparison, not competitive strength.",
+    "selection": "Final predeclared update or budget endpoint only; evaluation outcomes do not select checkpoints or tune the training recipe.",
+    "inference": "Teacher-free student policy at declared fixed action-selection mode. Natural outcomes, faults and censoring retained separately."
+  },
+  "objective": "Full-distribution frozen-Mew policy cross-entropy on queried genuine-choice frames reached by the student. No teacher weight copying, value loss, PPO, outcome policy gradient or changing opponent pool.",
+  "completion_evidence": [
+    "Teacher and student consume the same immutable actor-visible native frame and eligible columns.",
+    "Tensor-only teacher scoring preserves native prompt, RNG and statistics; no privileged search-root inputs.",
+    "Teacher state and student value-head parameters remain unchanged, while an actual policy update changes student actor parameters.",
+    "Checkpoint reload reproduces policy logits, and teacher-free complete-game evaluation includes all scheduled assignments and failures.",
+    "Held-out fixed probe reports initial and final target cross-entropy and top-action agreement; complete-game outcomes and uncertainty determine the limited transfer verdict independently of training loss."
+  ],
+  "runtime": "Linux CPU, one intra-op and inter-op thread, eager float32, nice 19. No GPU, live ranked play or cloud spending.",
+  "preservation": "Freeze actual source and private dependency/checkpoint hashes in bindings before execution. New exclusive output directories only. Keep teacher bundle, weights and raw frames private. Existing comparison artifacts remain immutable.",
+  "prelearning_qualification": {
+    "ordered_frame_receipt_sha256": "97ed1efb22a9c53194b1536a543cd10968d7f99a5964143efb8e4fd4ee34df2c",
+    "runner_qualification_sha256": "6b63d44896835c5eaf66e4a90a9d33d30a410b3d2ec50ba0212b50f9a79b98ff",
+    "scope": "Actual historical ordered prefix frames and runner forward/reload qualification; no training or Standard claim."
+  }
+}

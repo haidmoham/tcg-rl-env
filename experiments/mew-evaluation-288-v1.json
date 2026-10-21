@@ -1,0 +1,29 @@
+{
+  "schema": "86-tcg-agent/native-evaluation-amendment/1",
+  "amendment_id": "mew-evaluation-288-v1",
+  "parent_protocol_file_sha256": "e0cc3b8d05a038f2b10d2a81013933d8a7f2be833d3a7be8bc05b4eaeff8f46d",
+  "parent_protocol_sha256": "d8cdbd1516750ea3c16513204139eb168b35f3d782968782b92653ac4df7965f",
+  "reason": "User instruction supersedes the 576-game default with 288 games per checkpoint. Training and other audits remain unchanged.",
+  "games_per_checkpoint": 288,
+  "clusters": 144,
+  "ordered_deck_pairs": 36,
+  "pair_repetitions": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "seat_swap": true,
+  "assignment_selection": "Retain parent assignments with repetition in [0,1,2,3] for every ordered deck pair and both learner seats. Preserve parent index, cluster index, engine seed and action seeds. Selection never examines outcomes.",
+  "seed": 862001,
+  "seed_domain": "native-sustained-eval576-v1",
+  "max_evaluation_checkpoints": 7,
+  "comparisons_per_checkpoint": 2,
+  "family_alpha": 0.05,
+  "per_comparison_alpha": 0.0035714285714285718,
+  "uncertainty": "Paired deck-pair/repetition clusters, 144 clusters per comparison. Bonferroni over the existing family of at most seven checkpoint identities and two contrasts. Include unresolved outcomes adversarially. Earlier 576-game evaluations consume their original family slots.",
+  "reference_reuse": "Validate all 576 original assignments and immutable receipt hashes, then select the fixed 288 assignment identities. Record subset-derived provenance and zero new reference games. Preserve full original evidence.",
+  "limits": "Retain all parent wall, per-game and learner-choice ceilings. Halve game count only.",
+  "reporting": "Every 30 minutes and final, with cumulative training choices, completed updates and optimizer steps separate from evaluation games, learner choices and wall cost.",
+  "scope": "Historical six-deck uniform-opponent evaluation only. Full current-Standard coverage remains independently required for ranked-lineage training. No live play, GPU or cloud spending."
+}

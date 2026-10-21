@@ -1,0 +1,125 @@
+{
+  "schema": "86-tcg-agent/native-sustained/1",
+  "execution_enabled": true,
+  "roadmap_issue": "https://github.com/haidmoham/86-tcg-agent/issues/3",
+  "sequence": [
+    1,
+    3,
+    4
+  ],
+  "skipped_stage": 2,
+  "scope": "Sustained historical six-deck experiment. The completed short pilot is pipeline evidence, not a learning-budget comparison. Current-Standard integration remains independently gated.",
+  "student": {
+    "d_model": 128,
+    "n_layers": 2,
+    "n_heads": 4,
+    "ffn_mult": 2,
+    "dropout": 0.0
+  },
+  "opponent": "fixed_uniform_native_legal",
+  "limits": {
+    "wall_seconds": 7200,
+    "training_stop_campaign_seconds": 6000,
+    "training_learner_microsteps": 100000,
+    "stage1_wall_seconds": 1800,
+    "stage3_wall_seconds": 600,
+    "per_game_wall_seconds": 120,
+    "max_game_microsteps": 4096,
+    "finalization_reserve_seconds": 30,
+    "evaluation_learner_microsteps_per_checkpoint": 100000,
+    "evaluation_wall_seconds_per_checkpoint": 1800
+  },
+  "stage1": {
+    "max_updates": 3,
+    "labels_per_update": 512,
+    "query_probability": 0.1,
+    "lr": 0.0001,
+    "temperature": 1.0,
+    "probe_frames": 32,
+    "probe_max_microsteps": 2000,
+    "teacher_queries": 10000,
+    "teacher_query_seconds": 900,
+    "probe_identity_policy": "Freeze independent-seed probe frames before fitting. Exclude their exact digests from every optimizer batch and count exclusions. Never filter probes by loss or game outcome.",
+    "objective": "Full legal-distribution Mew policy cross-entropy only. Student chooses its own actions; teacher and student value-head parameters stay frozen. Shared student encoder is policy-trainable."
+  },
+  "calibration": {
+    "training_games": 16,
+    "heldout_games": 16,
+    "fit_examples": 1024,
+    "heldout_examples": 512,
+    "retained_training_per_game": 64,
+    "retained_heldout_per_game": 32,
+    "epochs": 8,
+    "lr": 0.0001,
+    "objective": "Ordinary-initialized value head only, terminal learner-seat outcome MSE. Actor, encoder and buffers remain frozen. No teacher access. Heldout metrics do not select epochs."
+  },
+  "ppo": {
+    "target_learner_microsteps": 4096,
+    "max_episodes_per_update": 96,
+    "max_updates": 64,
+    "max_epochs": 4,
+    "gamma": 1.0,
+    "gae_lambda": 0.95,
+    "clip": 0.2,
+    "entropy_coef": 0.01,
+    "value_coef": 0.5,
+    "lr": 0.0001,
+    "weight_decay": 0.0,
+    "grad_clip": 0.5,
+    "kl_stop": 0.02,
+    "admission": "Whole natural-terminal learner-seat episodes from one frozen learner version; collect at least 4096 learner choices before fitting. Censors/faults do not become outcome labels. No incomplete optimizer update becomes a completed checkpoint.",
+    "objective": "Teacher-free clipped PPO, student-old-value GAE and terminal Monte Carlo critic MSE. Uniform opponent pool remains fixed. No league or teacher regularization."
+  },
+  "seeds": {
+    "student_init": 863001,
+    "probe": 863101,
+    "training": 863201,
+    "calibration": 863301,
+    "calibration_heldout": 863401,
+    "ppo": 863501,
+    "optimizer": 863601
+  },
+  "evaluation": {
+    "games_per_checkpoint": 576,
+    "seed": 862001,
+    "seed_domain": "native-sustained-eval576-v1",
+    "pair_repetitions": 8,
+    "seat_swap": true,
+    "assignment": "36 ordered six-deck pairs x eight independent pair seeds x two swapped seats. The two legs share the pair seed; all frozen checkpoints share assignments. Separate learner/opponent action generators are seeded by pair, repetition and seat.",
+    "per_game_wall_seconds": 120,
+    "max_game_microsteps": 4096,
+    "max_evaluation_checkpoints": 7,
+    "family_alpha": 0.05,
+    "comparisons_per_checkpoint": 2,
+    "per_comparison_alpha": 0.0035714285714285718,
+    "uncertainty": "Paired deck-pair/repetition clusters, 288 independent clusters per comparison. Bonferroni over at most seven scheduled checkpoints and two primary comparisons. Include all unresolved outcomes adversarially.",
+    "opponent": "Same frozen uniform legal opponent as training. This is a weak anchor, not a ranked or broad competitive-strength suite.",
+    "selection": "Fixed time snapshots and endpoints only. No evaluation-driven recipe changes, favorable-checkpoint selection, early success stopping or extension. Reuse qualified identical-policy reference results explicitly rather than count them as new games."
+  },
+  "reporting": {
+    "interval_seconds": 1800,
+    "evaluation_lead_seconds": 600,
+    "scheduled_campaign_seconds": [
+      1800,
+      3600,
+      5400,
+      7200
+    ],
+    "update_trigger": false,
+    "include_final_endpoint": true,
+    "fields": [
+      "stage",
+      "cumulative training learner steps",
+      "completed training updates",
+      "stage updates",
+      "campaign elapsed time",
+      "read-only evaluation decisions and cost",
+      "latest completed 576-game evaluation",
+      "checkpoint age and pending evaluation",
+      "uncertainty and all faults/censoring"
+    ]
+  },
+  "budget_accounting": "Training learner choices and read-only evaluation choices have distinct counters and predeclared limits. The 7200-second campaign clock never resets at stage transitions or reports. Training stops by campaign second6000 to reserve up to1200 seconds for final576-game evaluation. Every frozen evaluation keeps actual inference cost and decisions. Preserve all short-pilot budgets/evidence unchanged.",
+  "runtime": "Linux CPU1 per worker, nice19, deterministic eager FP32, no GPU. At most one training worker and one evaluation worker. No live ranked play, cloud spending or private-artifact publication.",
+  "stop_rule": "Stop at campaign wall or training-step cap and retain the last completed checkpoint. Report negative/inconclusive results. Do not advance to league training."
+}
