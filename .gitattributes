@@ -1,1 +1,2 @@
 * -text
+examples/tcg-agent/** -text whitespace=cr-at-eol,-blank-at-eof

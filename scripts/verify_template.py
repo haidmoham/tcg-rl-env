@@ -19,6 +19,8 @@ TEMPLATE_FILES = {
     ".gitattributes", ".github/workflows/verify.yml", ".gitignore", "AGENTS.md",
     "README.md", "coverage/current.json", "export-manifest.json", "pyproject.toml",
     "scripts/sync_template.py", "scripts/verify_template.py",
+    "reuse-manifest.json", "PROVENANCE.md", "REUSE.md", "MANIFEST.in",
+    "coverage/reuse-verification.json",
 }
 
 from sync_template import approved_path
@@ -64,12 +66,33 @@ def exported_sources():
         actual = set()
         for path in ROOT.rglob("*"):
             relative = path.relative_to(ROOT)
+            if relative.as_posix() in {"PKG-INFO", "setup.cfg"}:
+                continue
             if (relative.parts[0] in {"build", "dist", ".venv", "venv"}
                     or relative.parts[0].endswith(".egg-info") or "__pycache__" in relative.parts):
                 continue
             if path.is_file() or path.is_symlink():
                 actual.add(relative.as_posix())
-    expected_files = set(files) | TEMPLATE_FILES
+    reuse = json.loads((ROOT / "reuse-manifest.json").read_bytes())
+    require(reuse.get("schema") == "tcg-rl-env/reusable-export/1", "unknown reusable export schema")
+    require(re.fullmatch(r"[0-9a-f]{40}", reuse["source"]["commit"]), "invalid reusable source commit")
+    require(reuse["source"]["license"] == "MIT", "retain reusable source license")
+    for name, entry in reuse["files"].items():
+        relative = Path(name)
+        require(relative.as_posix() == name and not relative.is_absolute()
+                and ".." not in relative.parts and name.startswith("examples/tcg-agent/"),
+                f"invalid reusable export path: {name}")
+        require(name == "examples/tcg-agent/" + entry["sourcePath"], "reuse relocation differs")
+        require(re.fullmatch(r"[0-9a-f]{64}", entry["sha256"]), "invalid reusable digest")
+        require(sha256((ROOT / name).read_bytes()).hexdigest() == entry["sha256"],
+                f"reusable export bytes changed: {name}")
+    require("examples/tcg-agent/LICENSE" in reuse["files"], "missing original copyright notice")
+    expected_files = set(files) | set(reuse["files"]) | TEMPLATE_FILES
+    package_sources = {line.removeprefix("include ") for line in
+                       (ROOT / "MANIFEST.in").read_text(encoding="utf-8").splitlines()
+                       if line.startswith("include ")}
+    require(package_sources == expected_files - {"MANIFEST.in"},
+            "source distribution allowlist differs from publication inventory")
     require(actual == expected_files,
             f"publication inventory differs from allowlist: {sorted(actual ^ expected_files)}")
     for name in expected_files:
@@ -216,6 +239,7 @@ def main():
     except (ValueError, KeyError, OSError, subprocess.SubprocessError) as error:
         parser.exit(1, f"template verification failed: {error}\n")
     result = {"template": "verified", "exported_files": count,
+              "reusable_exported_files": len(json.loads((ROOT / "reuse-manifest.json").read_bytes())["files"]),
               "checks": ["source_hashes", "source_ast", "publication_hygiene", "coverage_accounting",
                          "ordered_legal_selection", "rollout_outcomes", "synthetic_coverage_parser_contract",
                          "coverage_cli_boundaries", "nonexecuting_planner",

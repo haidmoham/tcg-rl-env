@@ -1,0 +1,8 @@
+{
+  "name": "tcg-agent-twinleaf-conformance-tooling",
+  "private": true,
+  "dependencies": {
+    "@progress/pako-esm": "1.0.1",
+    "typescript": "4.3.5"
+  }
+}

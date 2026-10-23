@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/twinleafgg/twinleafgg.git",
+  "commit": "d89efe580127a05aff8b0456fd2ad587edbbee2d",
+  "licenseDeclaration": "MIT in README.md and ptcg-server/package.json; no standalone LICENSE at this revision",
+  "typescript": "4.3.5",
+  "pako": "1.0.1",
+  "standardAdmission": "unverified",
+  "purpose": "Privileged offline rules conformance only. No policy-facing adapter or full Standard claim."
+}

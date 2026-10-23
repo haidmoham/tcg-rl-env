@@ -1,0 +1,27 @@
+{
+  "schema": "offline-suite-v2",
+  "id": "basic-fixtures-heldout-v2",
+  "version": "1",
+  "targetFormat": "full-current-standard",
+  "executionProfile": "basic-duel-v1",
+  "standardCoverageClaim": false,
+  "engine": { "id": "tcg-agent-kernel", "version": "0.1.0" },
+  "split": "held-out-regression",
+  "splitNote": "No model training. Seeds and deck compositions reserved before the tactical policy comparison; these fixtures do not represent Standard matchups.",
+  "candidate": "tactical-basic-v1",
+  "opponents": [ { "policy": "greedy-v1", "weight": 0.5 }, { "policy": "legal-random-v1", "weight": 0.5 } ],
+  "decks": [
+    { "id": "balanced", "version": "1", "cards": [ { "id": "base1-52", "count": 4 }, { "id": "base1-61", "count": 4 }, { "id": "base1-97", "count": 52 } ] },
+    { "id": "machop-heavy", "version": "1", "cards": [ { "id": "base1-52", "count": 4 }, { "id": "base1-97", "count": 56 } ] },
+    { "id": "rattata-heavy", "version": "1", "cards": [ { "id": "base1-61", "count": 4 }, { "id": "base1-97", "count": 56 } ] }
+  ],
+  "matchups": [
+    { "id": "mirror", "candidateDeck": "balanced", "opponentDeck": "balanced", "seedStart": 200001, "seedCount": 20 },
+    { "id": "versus-machop", "candidateDeck": "balanced", "opponentDeck": "machop-heavy", "seedStart": 300001, "seedCount": 20 },
+    { "id": "versus-rattata", "candidateDeck": "balanced", "opponentDeck": "rattata-heavy", "seedStart": 400001, "seedCount": 20 }
+  ],
+  "policySeedStart": 180000001,
+  "bootstrapSeed": 170000001,
+  "bootstrapResamples": 1000,
+  "maxActions": 2000
+}

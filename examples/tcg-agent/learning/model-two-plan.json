@@ -1,0 +1,51 @@
+{
+  "schema": "native-second-model-plan/1",
+  "objective": "supervised imitation of the same pinned actor-visible heuristic",
+  "featureSchema": "native-ordinary-features/1",
+  "modelParameters": 1953,
+  "initialization": "fresh model, seed 1729, same architecture as model one",
+  "collection": {
+    "workers": 4,
+    "maximumAttempts": 24,
+    "maximumCompleteGames": 24,
+    "maximumWallSeconds": 1800,
+    "maximumGameSeconds": 180,
+    "maximumGameCommands": 400,
+    "trainingSeeds": [91001, 91002, 91003, 91004, 91005, 91006, 91007, 91008, 91009, 91010, 91011, 91012, 91013, 91014, 91015, 91016, 91017, 91018],
+    "validationSeeds": [91019, 91020, 91021, 91022, 91023, 91024],
+    "minimumCompleteTrainingGames": 8,
+    "minimumCompleteValidationGames": 2,
+    "minimumTrainingRecordsExclusive": 125,
+    "warmups": 0,
+    "replacements": 0,
+    "exclude": "all old/scaling/model-one examples and incomplete capacity-limited games",
+    "fatal": "invalid or rejected actual command, privacy or semantic/seed mismatch, unsupported decision"
+  },
+  "training": {
+    "defaultMaximumUpdates": 200,
+    "hardMaximumUpdates": 1000,
+    "maximumUpdateWallSeconds": 120,
+    "minibatchSize": 64,
+    "validationEveryUpdates": 10,
+    "patienceChecks": 3,
+    "minimumValidationLossImprovement": 0.0001,
+    "retainedCheckpoint": "best trained checkpoint by whole-game validation loss",
+    "selectionUsesFinalEvaluation": false
+  },
+  "finalEvaluation": {
+    "untouchedUntilCheckpointSelected": true,
+    "models": ["model-one", "model-two"],
+    "opponent": "same pinned heuristic, all setup and prompts use the fixed helper",
+    "casesPerModel": [
+      { "id": "92001-human", "seed": 92001, "ordinaryPolicySeat": "human", "seatOrder": [0, 1] },
+      { "id": "92001-opponent", "seed": 92001, "ordinaryPolicySeat": "opponent", "seatOrder": [1, 0] },
+      { "id": "92002-human", "seed": 92002, "ordinaryPolicySeat": "human", "seatOrder": [0, 1] },
+      { "id": "92002-opponent", "seed": 92002, "ordinaryPolicySeat": "opponent", "seatOrder": [1, 0] }
+    ],
+    "learnerDeckIndex": 0,
+    "maximumGameSeconds": 180,
+    "maximumGameCommands": 400,
+    "interpretation": "four paired cases per model; descriptive outcomes, no strength or superiority claim"
+  },
+  "scope": "offline private two-deck profile only; no RL, full Standard, Live integration or teacher-superiority claim"
+}

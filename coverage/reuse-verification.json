@@ -1,0 +1,36 @@
+{
+  "schema": "tcg-rl-env/reuse-verification/1",
+  "verifiedAt": "2026-10-23",
+  "sourcePins": {
+    "canonical": "fb3073f9517d93ffc9edc3196a3fe845ce523de8",
+    "publicExample": "0a405181b0f6875ebe01f9226f669e9d7a4419c6",
+    "twinleaf": "d89efe580127a05aff8b0456fd2ad587edbbee2d"
+  },
+  "runtime": {"os": "Windows", "python": "3.12.10", "node": "24.18.0", "torch": "2.12.0+cpu"},
+  "unchangedJavaScriptTests": {"passed": 40, "failed": 0, "skipped": 0, "command": "node --test tests/*.test.mjs", "cwd": "examples/tcg-agent"},
+  "unchangedPythonTests": {"passed": 51, "failed": 0, "command": "python -m unittest discover -s learning -p 'test_*.py'", "cwd": "examples/tcg-agent", "device": "cpu", "tempDirectory": "dedicated writable task directory"},
+  "twinleafConformance": {"targetedAssertions": 7, "passed": true, "scope": "Constructed printed-card transitions; no complete card parity or Standard claim."},
+  "staticInventory": {
+    "classes": 14764,
+    "literalCardIdentities": 14152,
+    "sha256": "9f25886455b052d3110699e851f7055f1dd1b51d27dd64ff73d7803699695690",
+    "regeneratedByteIdentical": true,
+    "allRowsStatus": "script-present-unverified"
+  },
+  "restrictedNativeParityExecuted": false,
+  "newFullyParityVerifiedCards": 0,
+  "templateVerifier": {"passed": true, "canonicalFiles": 94, "reusableFiles": 65, "fullStandardExitCode": 2},
+  "packageSmoke": {"sdistBuilt": true, "wheelBuilt": true, "wheelInstalled": true, "imported": ["tcg.decision", "tcg.rollout", "tcg.standard_privacy_parity", "tcg.parity_runner"], "modelRuntimeLoaded": false},
+  "kernelDemo": {"completedNaturally": true, "replayVerified": true, "profile": "basic-duel-v1", "strengthClaim": false},
+  "fullStandardReady": false,
+  "restrictedNoticeIdentities": {
+    "cabtCompetitionUseOnlyLicenseSha256": "0bc3060e440432fa9481071ee9531d0d34e7212b1b6ffe595e38b9c9cd9c081b",
+    "mewHostOnlyNoticeSha256": "b8a6be5fb9fecc24780cf73c904c55828ce1b07462ae044fd1d3f2a03f0bb100"
+  },
+  "limitations": [
+    "The historical coverage/current.json aggregate remains unchanged.",
+    "Static class presence and imports do not establish card correctness, current legality or parity.",
+    "No restricted engine, Live programs, raw oracles, artwork or historical model was executed or redistributed.",
+    "Python tests use synthetic inputs; they do not measure playing strength."
+  ]
+}

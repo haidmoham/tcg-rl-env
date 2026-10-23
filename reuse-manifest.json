@@ -1,0 +1,402 @@
+{
+  "schema": "tcg-rl-env/reusable-export/1",
+  "exportedAt": "2026-10-23",
+  "source": {
+    "repository": "https://github.com/haidmoham/tcg-agent",
+    "commit": "0a405181b0f6875ebe01f9226f669e9d7a4419c6",
+    "license": "MIT",
+    "notice": "examples/tcg-agent/LICENSE"
+  },
+  "files": {
+    "examples/tcg-agent/LICENSE": {
+      "sourcePath": "LICENSE",
+      "sha256": "472304131223678445ef031a52e705aa56760376145ca8c8912e4e69b9bf768b",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/experiments/offline-suite-v2.json": {
+      "sourcePath": "experiments/offline-suite-v2.json",
+      "sha256": "dfd928f8e0fc4584c13e05fb5e984b7dda7e1dba12abfa2b7939d777218f9a68",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/local-worker/card-action-model.mjs": {
+      "sourcePath": "integrations/local-worker/card-action-model.mjs",
+      "sha256": "69be9b263bb6f922b44226e48d6e36c3c0f5dcdff1171550f120ab4ed9d7727e",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/local-worker/card-action-policy.mjs": {
+      "sourcePath": "integrations/local-worker/card-action-policy.mjs",
+      "sha256": "c54eccd0c0d27dacbf0a396f10d988c3d1a8806f4c6e09e98f753b33193ca0e1",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/local-worker/learning-features.mjs": {
+      "sourcePath": "integrations/local-worker/learning-features.mjs",
+      "sha256": "8bc323dfa1f7250d1d13ca16ce203ef7a7cb57c65560d80353cbf15118409797",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/twinleaf/README.md": {
+      "sourcePath": "integrations/twinleaf/README.md",
+      "sha256": "a1121c58b4776b9f3213bd18f850cb0dd0804174846da3c669a989a31001176c",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/twinleaf/conformance.mjs": {
+      "sourcePath": "integrations/twinleaf/conformance.mjs",
+      "sha256": "24a4b4cd3baa52b0fcb2b4bf4ab8be502267b50b10a86fb246e32113d6aaed36",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/twinleaf/pin.json": {
+      "sourcePath": "integrations/twinleaf/pin.json",
+      "sha256": "472c50c94c8acfb22056639fb9c2b14b7f474b2b89a8bf74fb8b50e79a19f1ba",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/twinleaf/public-engine.mjs": {
+      "sourcePath": "integrations/twinleaf/public-engine.mjs",
+      "sha256": "ae265d8194a5d354911893da32b07a20d01d286cb2f5874c6bdc52d8768021f2",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/twinleaf/source-inventory.json": {
+      "sourcePath": "integrations/twinleaf/source-inventory.json",
+      "sha256": "9f25886455b052d3110699e851f7055f1dd1b51d27dd64ff73d7803699695690",
+      "kind": "collected-inventory",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/twinleaf/tooling-package-lock.json": {
+      "sourcePath": "integrations/twinleaf/tooling-package-lock.json",
+      "sha256": "caa68536d9f65a8227995a74333e7bbe87eda2029451abd359472b73fb77f21e",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/integrations/twinleaf/tooling-package.json": {
+      "sourcePath": "integrations/twinleaf/tooling-package.json",
+      "sha256": "11c670e97cfed96fd3170b48f020f1a4d66681447f13f38aaa9ec292f326a7f2",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/alphazero-search.mjs": {
+      "sourcePath": "learning/alphazero-search.mjs",
+      "sha256": "5c016b56e52c04b61646f72542a77620ed200e1e3b8e727dd21262ae28d03465",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/alphazero.py": {
+      "sourcePath": "learning/alphazero.py",
+      "sha256": "8074e5e4dd69e2676951418b4ca7bc1c8be0d5690449c2af63505ee48e13c3f2",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/alphazero_runtime.py": {
+      "sourcePath": "learning/alphazero_runtime.py",
+      "sha256": "ec35932bf0a33c4cc2b4e1cc1ed461021100d4cf70cdb9f9853bd4fe8e9c5afc",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/bootstrap_bc.py": {
+      "sourcePath": "learning/bootstrap_bc.py",
+      "sha256": "5c82c6f0dee698fb05e7c6fb77f89b12dce34d107ddbbce5f0f2d93eaa0f477e",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/card-action-features.mjs": {
+      "sourcePath": "learning/card-action-features.mjs",
+      "sha256": "a3cd76ea299c94bca3ca62721641d5b2d51dbd9c402b97ba3cac8b1eed3a30a7",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/card_action_torch.py": {
+      "sourcePath": "learning/card_action_torch.py",
+      "sha256": "be83687b13d6754f6513b6409b4d16e9e5fde1f8b19d28f09c95c409937f3d07",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/entity-contract.json": {
+      "sourcePath": "learning/entity-contract.json",
+      "sha256": "d905a52c901fe95ba53b2bcac9a4df725a85717394f2c0a19132dd59850e61a2",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/entity-features.mjs": {
+      "sourcePath": "learning/entity-features.mjs",
+      "sha256": "b5a13991d678539ca588ebd3d2b8bb6155b4140d058e92858beb0f98b917396f",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/entity_ppo.py": {
+      "sourcePath": "learning/entity_ppo.py",
+      "sha256": "85d6f302ea66501aa9fc2f8d8dcec94173f089439eabe88dfc0e2fedfd342e07",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/entity_ppo_runtime.py": {
+      "sourcePath": "learning/entity_ppo_runtime.py",
+      "sha256": "7fc088a794f350e427abc1e85d7a03ed376da59b4e3c8a1dff2e77cf0cf37b29",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/entity_torch.py": {
+      "sourcePath": "learning/entity_torch.py",
+      "sha256": "39e1781300c601596f52d56201267a1351efcf8ac6cc2b0b5e50022ec4f63e5b",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/human_bc.py": {
+      "sourcePath": "learning/human_bc.py",
+      "sha256": "dbe000b1cc806b667997f9f2ef5e6c93cae8e6cf3f33f2d48c6e0e21e2597b71",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/joint_choice_sets.py": {
+      "sourcePath": "learning/joint_choice_sets.py",
+      "sha256": "8b3b189dc66457a4fd35cb06b8d017d326fc7bec17469e18522b0d4676c030f4",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/legal-choice-sets.mjs": {
+      "sourcePath": "learning/legal-choice-sets.mjs",
+      "sha256": "b3fd883029b479fada05f63447a076592c2a798dd6be9a68d615bab152d7c27d",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/masked-ppo-contract.md": {
+      "sourcePath": "learning/masked-ppo-contract.md",
+      "sha256": "1631890a146e75fb1662d2c714c47a4027aada5271ea8c95c0928e46bd211e18",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/masked_ppo.py": {
+      "sourcePath": "learning/masked_ppo.py",
+      "sha256": "ff55c778e5cdca3baec9870a18d0e4418d11fdb294bc0ee4799c6955ee9109ea",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/masked_ppo_service.py": {
+      "sourcePath": "learning/masked_ppo_service.py",
+      "sha256": "2182b294740d2ef1644b1abfb60473411ab5e11a453c0dd4dc2b56fd622a35fb",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/model-two-plan.json": {
+      "sourcePath": "learning/model-two-plan.json",
+      "sha256": "8a89124bb3f9b08eaa4cb708a214af475aed776c3997cc5a471c5f90a838be5c",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/model6-contract.json": {
+      "sourcePath": "learning/model6-contract.json",
+      "sha256": "a162d1fc80abc8ce594b1beab851c6b4bdcaf99eff0b4da47cfab77933885169",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/model6-features.mjs": {
+      "sourcePath": "learning/model6-features.mjs",
+      "sha256": "a17b5f2121d369ae78b6746b3e7de21a4538df7f3d75779c1a43e6fe1664cc7b",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/model6_torch.py": {
+      "sourcePath": "learning/model6_torch.py",
+      "sha256": "da7e58c7c19e6fe699f507a73079b890cfb12b9dfc6dc092e2393f9b73b8a5e0",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/native_torch.py": {
+      "sourcePath": "learning/native_torch.py",
+      "sha256": "d6d06f9b4804ad6361f8b1739ede4ba98562612439bf7e2cfddd8e029c028c95",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/ppo_runtime.py": {
+      "sourcePath": "learning/ppo_runtime.py",
+      "sha256": "1e31689a92eb76767e5d385a8e8f8e11aca989349c636ef42464fe4d223d3fed",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/test_alphazero.py": {
+      "sourcePath": "learning/test_alphazero.py",
+      "sha256": "c251eb0d1e343d1ddc823c44627e2cf57619b1b21ee74723d3daf94d232fbef5",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/test_card_action.py": {
+      "sourcePath": "learning/test_card_action.py",
+      "sha256": "09c73048be03e5b2c063e7c9e2d80f44303b73819fa5045411b63b688da844bf",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/test_card_action_storage.py": {
+      "sourcePath": "learning/test_card_action_storage.py",
+      "sha256": "16219e9007c6b7e2ab81813aff3505c91b3c71f8200b90f163f44c6ece06f812",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/test_joint_choice_sets.py": {
+      "sourcePath": "learning/test_joint_choice_sets.py",
+      "sha256": "03cd95d3eca856e4c974bf6c71ea9cc659553c7aeb1543ce9a5af3e14239eac7",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/test_masked_ppo.py": {
+      "sourcePath": "learning/test_masked_ppo.py",
+      "sha256": "f2c92342fd700713efdb055009d6bf922b5a85f2e7cb3bdd3b513f5df34ccda5",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/test_native_torch.py": {
+      "sourcePath": "learning/test_native_torch.py",
+      "sha256": "e556a4027b73ff3fe99e47cd5c0eabb444a6fa2d0dc0d8e97c5ef86af428e6f8",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/test_ppo_runtime.py": {
+      "sourcePath": "learning/test_ppo_runtime.py",
+      "sha256": "7c315271e37d68e32a38832215ee9ae32e2bac2efd295f6570f7f809a0ba6737",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/test_train_second.py": {
+      "sourcePath": "learning/test_train_second.py",
+      "sha256": "855756e4b3d51c9aee89eb5786f3d17b1c961622a3f67d8a823476f957b5963e",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/train_card_action.py": {
+      "sourcePath": "learning/train_card_action.py",
+      "sha256": "7ae73388c6a9ae812824467b4cc7b07b47a56c537a0d4ad171c9f9c59296a9f1",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/train_fresh.py": {
+      "sourcePath": "learning/train_fresh.py",
+      "sha256": "0f12dad4d41e29f38234b8b7669c780d3b964877e23989dd62a5c91d7cea18d8",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/train_model6.py": {
+      "sourcePath": "learning/train_model6.py",
+      "sha256": "a6db9eeb8fc10270b2bba8b36c80b806a622a3e69048278b6fcc7bed0eb8add4",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/learning/train_second.py": {
+      "sourcePath": "learning/train_second.py",
+      "sha256": "08ceed51412f3597745bcffbffe2fce7a18416e12122c81c677dbfc5dfb0e32b",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/scripts/demo.mjs": {
+      "sourcePath": "scripts/demo.mjs",
+      "sha256": "7751262b6229423bc954b230faaf8dcb88a6cfb1dedfba9046c63b89d04b71d8",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/scripts/evaluate-suite.mjs": {
+      "sourcePath": "scripts/evaluate-suite.mjs",
+      "sha256": "867bcd2ca796d41f57c05b113e7c3309537424d53f041d95910270ccb19025b4",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/scripts/twinleaf-audit.mjs": {
+      "sourcePath": "scripts/twinleaf-audit.mjs",
+      "sha256": "15f46127014a945746c1f36c1491f9e3bea4634804dfe3cfc4d9b5f947506ae6",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/scripts/twinleaf-prepare.mjs": {
+      "sourcePath": "scripts/twinleaf-prepare.mjs",
+      "sha256": "f6be9172e4abee6b1a7cab4ca512ddcc36ab457f10276d1b9239c7e989851eb0",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/scripts/twinleaf-smoke.mjs": {
+      "sourcePath": "scripts/twinleaf-smoke.mjs",
+      "sha256": "408fecee0ae06dba20ed838bb89a5d62f1c32f854b645bf0c0ae67a761f5e83b",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/src/cards.mjs": {
+      "sourcePath": "src/cards.mjs",
+      "sha256": "14ecdc0cce4d1060499c1303395b5997ae9d4912cad49291cdc074d9fc08b571",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/src/environment.mjs": {
+      "sourcePath": "src/environment.mjs",
+      "sha256": "b4a813c40b59ea900e9c09e6f0816fd351c0fc8fab537c1c53355c374d4b9e4d",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/src/evaluation-suite.mjs": {
+      "sourcePath": "src/evaluation-suite.mjs",
+      "sha256": "6373cf1c32e26a6b21c63838cd7a09ac2e7aa314239a977af4c96e0e2bae4c32",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/src/policies.mjs": {
+      "sourcePath": "src/policies.mjs",
+      "sha256": "f0795d1d8efcb63fad05d7828dc5c1a1efe71face8a530a7f6bd8067eb1276f8",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/src/policy-boundary.mjs": {
+      "sourcePath": "src/policy-boundary.mjs",
+      "sha256": "e97019677b0f24d0e622aa6ad898d68ffb6d93ad3f24f32d4c0cf2daf90974e9",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/src/rng.mjs": {
+      "sourcePath": "src/rng.mjs",
+      "sha256": "38c4e96772cba548cd89a0d140df8a34ec1d7f692718091d00456fa4fdd07f11",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/src/tactical-policy.mjs": {
+      "sourcePath": "src/tactical-policy.mjs",
+      "sha256": "7eb8cb721d02ff67246c85423066da4bec2fc8f3129e1f2e037fd048c37c08ec",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/tests/alphazero-search.test.mjs": {
+      "sourcePath": "tests/alphazero-search.test.mjs",
+      "sha256": "e6bc1e4fb5c3c43fe0e02df318dbac64b21130a960c003f71d49ae41056a76ba",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/tests/card-action-features.test.mjs": {
+      "sourcePath": "tests/card-action-features.test.mjs",
+      "sha256": "fbd3bacbc79683b6e3a63b0e2aeba7ec91a703c87d74a4052220798542e75700",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/tests/environment.test.mjs": {
+      "sourcePath": "tests/environment.test.mjs",
+      "sha256": "29a6c25100af5cb46cc5d1bc0895c161a625d47bbdca6072d63823ddb4de77d5",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/tests/evaluation-suite.test.mjs": {
+      "sourcePath": "tests/evaluation-suite.test.mjs",
+      "sha256": "b9a30c2ce1ccd27541f64b93b77572c9617fd458de45651822374a86f5ca41cb",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/tests/legal-choice-sets.test.mjs": {
+      "sourcePath": "tests/legal-choice-sets.test.mjs",
+      "sha256": "27c0f291cfa2339603b5e82bc3987cc37a22edfd346dbb5609e5bd207733a74a",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    },
+    "examples/tcg-agent/tests/twinleaf.test.mjs": {
+      "sourcePath": "tests/twinleaf.test.mjs",
+      "sha256": "d5cb643784f0ac5442600ceb615da7b2c45194982dda13d396cc15b9bf0698b0",
+      "kind": "original-project-work",
+      "transformation": "Byte-preserving relocation under examples/tcg-agent; relative layout retained."
+    }
+  }
+}

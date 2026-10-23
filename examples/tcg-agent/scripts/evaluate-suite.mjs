@@ -1,0 +1,11 @@
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { performance } from 'node:perf_hooks';
+import { evaluateSuite } from '../src/evaluation-suite.mjs';
+const manifestPath = process.argv[2] ?? 'experiments/offline-suite-v2.json';
+const start = performance.now();
+const report = evaluateSuite(JSON.parse(readFileSync(manifestPath, 'utf8')));
+report.elapsedMs = performance.now() - start;
+mkdirSync('runs', { recursive: true });
+writeFileSync('runs/evaluation-suite-v2.json', JSON.stringify(report, null, 2));
+console.log(JSON.stringify({ ...report, games: `${report.games.length} game records in runs/evaluation-suite-v2.json` }, null, 2));
+if (report.groups.some(group => group.totals.errors || group.totals.truncations)) process.exitCode = 1;

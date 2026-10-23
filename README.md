@@ -4,10 +4,17 @@ Reuse actor-visible observations, exact legal-action selections, rollout
 accounting, policy code, and training and evaluation recipes for Pokemon TCG
 research. The target is the full dated Standard card pool.
 
+The [reuse guide](REUSE.md) adds a runnable public three-card regression kernel,
+original candidate/entity learning and search code, unchanged tests, and pinned
+retrieval/conformance tools for the full public Twinleaf card-source inventory.
+[Provenance and attribution](PROVENANCE.md) distinguish our work, collected
+inventory facts and restricted materials omitted from this repository.
+
 **Full Standard training is not ready.** This release contains reusable code
-and an aggregate coverage snapshot. Native games require a separately obtained,
-authorized engine. The repository does not supply card programs, model weights,
-raw game data, or a complete public simulator.
+and an aggregate coverage snapshot. CABT native games require a separately
+obtained, authorized engine. The repository supplies a bounded public regression
+simulator; it does not supply extracted card programs, model weights, raw game
+data or a complete Standard simulator.
 
 ## Inspect the template
 

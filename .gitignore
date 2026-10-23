@@ -21,3 +21,5 @@ artifacts/
 .env
 .env.*
 *.pending
+.cache/
+node_modules/
